@@ -1,8 +1,8 @@
 require "test_helper"
 
-class Simplecov::MaterialTest < Minitest::Test
+class SimplecovMaterialTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Simplecov::Material::VERSION
+    refute_nil ::SimplecovMaterial::VERSION
   end
 
   def test_it_does_something_useful
