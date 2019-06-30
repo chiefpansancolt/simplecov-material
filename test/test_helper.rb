@@ -3,3 +3,9 @@ require "bundler/setup"
 require "simplecov"
 require "simplecov-material"
 require "minitest/autorun"
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::MaterialFormatter
+]
+
+SimpleCov.start

@@ -95,7 +95,7 @@ module SimpleCov
       end
 
       def timeago(time)
-        "<abbr class=\"timeago\" title=\"#{time.iso8601}\">#{time.iso8601}</abbr>"
+        "<abbr class=\"timeago\" datetime=\"#{time.iso8601}\">#{time}</abbr>"
       end
 
       def shortened_filename(source_file)

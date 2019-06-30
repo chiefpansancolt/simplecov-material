@@ -11,19 +11,12 @@ else
   gem "rake", ">= 11"
 end
 
-platforms :ruby_18, :ruby_19 do
-  gem "json", "~> 1.8"
-end
-
-platforms :ruby_18, :ruby_19, :ruby_20, :ruby_21 do
-  gem "rack", "~> 1.6"
-end
-
 group :test do
   gem "minitest"
 end
 
 group :development do
   gem "rubocop"
+  gem "rails", "6.0.0.rc1"
   gem "webpacker"
 end
