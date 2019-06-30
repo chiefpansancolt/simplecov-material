@@ -6,6 +6,7 @@ $material-design-icons-font-directory-path: '~material-design-icons-iconfont/dis
 @import "@material/list/mdc-list";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/button/mdc-button";
+@import "@material/card/mdc-card";
 
 @import "./styles/table";
 
@@ -67,4 +68,10 @@ footer {
 
 .green {
   color: #388e3c;
+}
+
+.file_list_container {
+  .mdc-card {
+    margin-top: 25px;
+  }
 }
