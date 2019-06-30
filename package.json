@@ -1,0 +1,44 @@
+{
+  "name": "simplecov-material",
+  "version": "0.1.0",
+  "description": "HTML Material Design View for Simplecov formatter",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.js",
+    "test": "rake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiefpansancolt/simplecov-material.git"
+  },
+  "keywords": [
+    "simplecov;",
+    "simplecov-formatter"
+  ],
+  "author": "Christopher Pezza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiefpansancolt/simplecov-material/issues"
+  },
+  "homepage": "https://github.com/chiefpansancolt/simplecov-material#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "babel-core": "6",
+    "babel-loader": "7",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^3.0.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.0.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "2"
+  },
+  "dependencies": {
+    "material-components-web": "^3.0.0",
+    "material-design-icons-iconfont": "^5.0.1",
+    "timeago.js": "^4.0.0-beta.2"
+  }
+}

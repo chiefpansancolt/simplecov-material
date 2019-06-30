@@ -1,4 +1,11 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "simplecov/material"
-
+require "bundler/setup"
+require "simplecov"
+require "simplecov-material"
 require "minitest/autorun"
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::MaterialFormatter
+]
+
+SimpleCov.start
