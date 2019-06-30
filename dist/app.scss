@@ -16,11 +16,16 @@ body {
   margin: 0;
 }
 
-footer {
-  margin-top: -50px;
+section.footer {
+  margin-top: 20px;
+  margin-left: -18px;
+  margin-right: -18px;
   height: 50px;
   background-color: #202124;
   color: #fafafa;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   div {
     padding-top: 15px;
