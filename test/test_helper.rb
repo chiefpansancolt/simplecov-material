@@ -8,4 +8,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::MaterialFormatter
 ]
 
-SimpleCov.start
+SimpleCov.start do
+  add_group "Libraries", "lib"
+  track_files "{lib}/**/*.rb"
+end

@@ -22,23 +22,27 @@
   },
   "homepage": "https://github.com/chiefpansancolt/simplecov-material#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "autoprefixer": "^9.6.0",
-    "babel-core": "6",
-    "babel-loader": "7",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.0.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
-    "webpack": "3",
+    "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": ">=3.1.11"
   },
   "dependencies": {
+    "datatables.net": "^1.10.19",
+    "datatables.net-dt": "^1.10.19",
+    "jquery": "^3.4.1",
     "material-components-web": "^3.0.0",
     "material-design-icons-iconfont": "^5.0.1",
+    "material-design-lite": "^1.3.0",
     "timeago.js": "^4.0.0-beta.2"
   }
 }

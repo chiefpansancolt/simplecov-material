@@ -1,4 +1,4 @@
-import {MDCTopAppBar} from "@material/top-app-bar";
+import { MDCTopAppBar } from "@material/top-app-bar";
 
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
 

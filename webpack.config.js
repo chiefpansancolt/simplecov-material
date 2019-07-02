@@ -1,9 +1,15 @@
+const path = require('path');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: ['./dist/app.scss', './dist/app.js'],
+  mode: 'development',
+  entry: {
+    application: ['./dist/app.scss', './dist/app.js']
+  },
   output: {
-    filename: 'public/application.js'
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'public'),
+    libraryTarget: 'window'
   },
   module: {
     rules: [
@@ -13,7 +19,6 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'public',
               name: 'application.css'
             }
           },
@@ -39,7 +44,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: 'images',
-              outputPath: 'public/images'
+              outputPath: 'images'
             }
           }
         ]
@@ -51,17 +56,25 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: 'fonts',
-              outputPath: 'public/fonts'
+              outputPath: 'fonts'
             }
           }
         ]
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015'],
-        },
+        test: /\.m?js$/,
+        include: [
+          path.resolve(__dirname, "dist")
+        ],
+        exclude: [
+          path.resolve(__dirname, "node_modules")
+        ],
+        enforce: "pre",
+        enforce: "post",
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env']
+        }
       }
     ],
   }

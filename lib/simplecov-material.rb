@@ -102,8 +102,12 @@ module SimpleCov
         source_file.filename.sub(SimpleCov.root, ".").gsub(/^\.\//, "")
       end
 
-      def link_to_source_file(source_file)
-        %(<a href="##{id source_file}" class="src_link" title="#{shortened_filename source_file}">#{shortened_filename source_file}</a>)
+      def hide_show(title)
+        if title == "AllFiles"
+          "display: '';"
+        else
+          "display: none;"
+        end
       end
     end
   end

@@ -1,4 +1,4 @@
-import {MDCRipple} from '@material/ripple';
+import { MDCRipple } from '@material/ripple';
 var b, l, i;
 
 const buttons = document.querySelectorAll('.mdc-button');
