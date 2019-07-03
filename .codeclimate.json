@@ -70,9 +70,6 @@
 		"eslint": {
 			"enabled": true
 		},
-		"brakeman": {
-			"enabled": true
-		},
 		"stylelint": {
 			"enabled": true
 		}

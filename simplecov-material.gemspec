@@ -9,15 +9,14 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Christopher Pezza"]
   spec.email         = ["chiefpansancolt@gmail.com"]
 
-  spec.summary       = %q{HTML Material Design View for Simplecov formatter}
-  spec.description   = %q{HTML Material Design View of Simplecov as a formatter that is clean, easy to read.}
+  spec.summary       = "HTML Material Design View for Simplecov formatter"
+  spec.description   = %q(HTML Material Design View of Simplecov as a formatter
+                          that is clean, easy to read.)
   spec.homepage      = "https://github.com/chiefpansancolt/simplecov-material"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = ">= 1.8.7"
+  spec.required_ruby_version = ">= 2.0.0"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "https://rubygems.pkg.github.com/chiefpansancolt'"
     spec.metadata["homepage_uri"] = spec.homepage
@@ -29,8 +28,6 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files         = `git ls-files`.split("\n")
   spec.bindir        = "bin"
   spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

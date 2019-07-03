@@ -4,7 +4,13 @@
   "description": "HTML Material Design View for Simplecov formatter",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "test": "rake test"
+    "test:start": "bundle exec rake test",
+    "test:open": "open coverage/index.html",
+    "test": "npm-run-all test:*",
+    "lint:ruby": "rubocop",
+    "lint:js": "eslint app/**/*.js",
+    "lint:css": "stylelint app/**/*.scss",
+    "lint": "npm-run-all lint:*"
   },
   "repository": {
     "type": "git",
@@ -41,6 +47,7 @@
     "extract-loader": "^3.1.0",
     "file-loader": "^4.0.0",
     "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "stylelint": "^10.1.0",
