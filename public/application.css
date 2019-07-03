@@ -10959,6 +10959,7 @@ table {
       .table thead tr td.overflow,
       .table tbody tr th.overflow,
       .table tbody tr td.overflow {
+        display: inline-block;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
