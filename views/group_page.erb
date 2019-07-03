@@ -71,7 +71,7 @@
           <% files.each do |source_file| %>
             <tr class="clickable" name="<%= shortened_filename(source_file) %>"
                 onclick="openModal(this.attributes.name.value)">
-              <td class="overflow" width="50%">
+              <td class="overflow" width="50%" title="<%= shortened_filename(source_file) %>">
                 <div><%= shortened_filename(source_file) %></div>
               </td>
               <td class="center <%= coverage_class(source_file.covered_percent) %>" width="9%">
