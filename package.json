@@ -3,46 +3,56 @@
   "version": "0.1.0",
   "description": "HTML Material Design View for Simplecov formatter",
   "scripts": {
-    "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.js",
     "test": "rake test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chiefpansancolt/simplecov-material.git"
+    "url": "https://github.com/chiefpansancolt/simplecov-material"
   },
   "keywords": [
-    "simplecov;",
-    "simplecov-formatter"
+    "simplecov",
+    "simplecov-formatter",
+    "simplecov-material"
   ],
-  "author": "Christopher Pezza",
+  "author": {
+    "name": "Christopher Pezza",
+    "email": "chiefpansancolt@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chiefpansancolt/simplecov-material/issues"
   },
+  "contributors": [
+    {
+      "name": "Christopher Pezza",
+      "email": "chiefpansancolt@gmail.com"
+    }
+  ],
   "homepage": "https://github.com/chiefpansancolt/simplecov-material#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "autoprefixer": "^9.6.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "eslint": "^6.0.1",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.0.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.0",
+    "stylelint-scss": "^3.8.0",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": ">=3.1.11"
+    "webpack-cli": "^3.3.5"
   },
   "dependencies": {
-    "datatables.net": "^1.10.19",
-    "datatables.net-dt": "^1.10.19",
-    "jquery": "^3.4.1",
     "material-components-web": "^3.0.0",
     "material-design-icons-iconfont": "^5.0.1",
-    "material-design-lite": "^1.3.0",
     "timeago.js": "^4.0.0-beta.2"
   }
 }
