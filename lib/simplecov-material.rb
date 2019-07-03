@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "erb"
 require "cgi"
 require "fileutils"
@@ -5,7 +7,7 @@ require "digest/sha1"
 
 # Ensure we are using a compatible version of SimpleCov
 major, minor, patch = SimpleCov::VERSION.scan(/\d+/).first(3).map(&:to_i)
-if major < 0 || minor < 9 || patch < 0
+if major.negative? || minor < 9 || patch.negative?
   raise "The version of SimpleCov you are using is too old. "\
   "Please update with `gem install simplecov` or `bundle update simplecov`"
 end
@@ -25,13 +27,17 @@ module SimpleCov
       end
 
       def output_message(result)
-        "Coverage report generated for #{result.command_name} to #{output_path}. #{result.covered_lines} / #{result.total_lines} LOC (#{result.covered_percent.round(2)}%) covered."
+        "Coverage report generated for #{result.command_name} to" \
+        "#{output_path}. #{result.covered_lines} / #{result.total_lines} LOC" \
+        " (#{result.covered_percent.round(2)}%) covered."
       end
 
     private
 
       def template(name)
-        ERB.new(File.read(File.join(File.dirname(__FILE__), "../views/", "#{name}.erb")))
+        ERB.new(File.read(File.join(
+          File.dirname(__FILE__), "../views/", "#{name}.erb"
+        )))
       end
 
       def output_path
@@ -39,21 +45,28 @@ module SimpleCov
       end
 
       def asset_output_path
-        return @asset_output_path if defined?(@asset_output_path) && @asset_output_path
+        return @asset_output_path if defined?(@asset_output_path) &&
+                                     @asset_output_path
 
-        @asset_output_path = File.join(output_path, "dist", SimpleCov::Formatter::MaterialFormatter::VERSION)
+        @asset_output_path = File.join(
+          output_path, "dist", SimpleCov::Formatter::MaterialFormatter::VERSION
+        )
         FileUtils.mkdir_p(@asset_output_path)
         @asset_output_path
       end
 
       def assets_path(name)
-        File.join("./dist", SimpleCov::Formatter::MaterialFormatter::VERSION, name)
+        File.join(
+          "./dist", SimpleCov::Formatter::MaterialFormatter::VERSION, name
+        )
       end
 
       def generate_dialog(file)
         template("dialog").result(binding)
       rescue Encoding::CompatibilityError => e
-        puts "Encoding problems with file #{file.filename}. Simplecov/ERB can't handle non ASCII characters in filenames. Error: #{e.message}."
+        puts "Encoding problems with file #{file.filename}. Simplecov/ERB "\
+             "can't handle non ASCII characters in filenames. Error: " \
+             "#{e.message}."
       end
 
       def generate_group_page(title, files)

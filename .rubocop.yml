@@ -234,6 +234,8 @@ Metrics/LineLength:
   Description: Limit lines to 80 characters.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#80-character-limits
   Enabled: true
+  Exclude:
+    - "**/*.gemspec"
 Metrics/MethodLength:
   Description: Avoid methods longer than 10 lines of code.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
@@ -256,6 +258,7 @@ Metrics/BlockLength:
   - Rakefile
   - "**/*.rake"
   - spec/**/*.rb
+  - "**/*.gemspec"
 Performance/Count:
   Description: Use `count` instead of `select...size`, `reject...size`, `select...count`,
     `reject...count`, `select...length`, and `reject...length`.
@@ -474,7 +477,7 @@ Layout/ExtraSpacing:
 Naming/FileName:
   Description: Use snake_case for source file names.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#snake-case-files
-  Enabled: true
+  Enabled: false
 Layout/InitialIndentation:
   Description: Checks the indentation of the first non-blank non-comment line in a
     file.
@@ -877,3 +880,5 @@ Style/EmptyMethod:
 Security/Eval:
   Description: The use of eval represents a serious security risk.
   Enabled: true
+Gemspec/RequiredRubyVersion:
+  Enabled: false

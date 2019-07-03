@@ -117,7 +117,7 @@ eval("module.exports = __webpack_require__.p + \"application.css\";\n\n//# sourc
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"openModal\", function() { return openModal; });\n/* harmony import */ var _material_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/dialog */ \"./node_modules/@material/dialog/index.js\");\n\nfunction openModal(fileName) {\n  console.log(fileName);\n  var dialog = new _material_dialog__WEBPACK_IMPORTED_MODULE_0__[\"MDCDialog\"](document.getElementById(fileName + '-dialog'));\n  dialog.open();\n}\nwindow.openModal = openModal;\n\n//# sourceURL=webpack:///./dist/scripts/dialog.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"openModal\", function() { return openModal; });\n/* harmony import */ var _material_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/dialog */ \"./node_modules/@material/dialog/index.js\");\n\nfunction openModal(fileName) {\n  var dialog = new _material_dialog__WEBPACK_IMPORTED_MODULE_0__[\"MDCDialog\"](document.getElementById(fileName + '-dialog'));\n  dialog.open();\n}\nwindow.openModal = openModal;\n\n//# sourceURL=webpack:///./dist/scripts/dialog.js?");
 
 /***/ }),
 
@@ -129,7 +129,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_textfield__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/textfield */ \"./node_modules/@material/textfield/index.js\");\n/* harmony import */ var _material_textfield_helper_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material/textfield/helper-text */ \"./node_modules/@material/textfield/helper-text/index.js\");\n\n\nvar a, b;\nvar textFields = document.querySelectorAll('.mdc-text-field');\nvar helperTexts = document.querySelectorAll('.mdc-text-field-helper-text');\n\nfor (a = 0; a < textFields.length; a++) {\n  new _material_textfield__WEBPACK_IMPORTED_MODULE_0__[\"MDCTextField\"](textFields[a]);\n}\n\nfor (b = 0; b < helperTexts.length; b++) {\n  new _material_textfield_helper_text__WEBPACK_IMPORTED_MODULE_1__[\"MDCTextFieldHelperText\"](helperTexts[b]);\n}\n\n//# sourceURL=webpack:///./dist/scripts/forms.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_textfield__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/textfield */ \"./node_modules/@material/textfield/index.js\");\n/* harmony import */ var _material_textfield_helper_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material/textfield/helper-text */ \"./node_modules/@material/textfield/helper-text/index.js\");\n\n\nvar textFields = document.querySelectorAll('.mdc-text-field');\nvar helperTexts = document.querySelectorAll('.mdc-text-field-helper-text');\n\nfor (var a = 0; a < textFields.length; a++) {\n  new _material_textfield__WEBPACK_IMPORTED_MODULE_0__[\"MDCTextField\"](textFields[a]);\n}\n\nfor (var b = 0; b < helperTexts.length; b++) {\n  new _material_textfield_helper_text__WEBPACK_IMPORTED_MODULE_1__[\"MDCTextFieldHelperText\"](helperTexts[b]);\n}\n\n//# sourceURL=webpack:///./dist/scripts/forms.js?");
 
 /***/ }),
 
@@ -141,7 +141,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mat
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/list */ \"./node_modules/@material/list/index.js\");\n\nvar i;\nvar lists = document.querySelectorAll('.mdc-list');\n\nfor (i = 0; i < lists.length; i++) {\n  var list = _material_list__WEBPACK_IMPORTED_MODULE_0__[\"MDCList\"].attachTo(lists[i]);\n  list.wrapFocus = true;\n}\n\n//# sourceURL=webpack:///./dist/scripts/list.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/list */ \"./node_modules/@material/list/index.js\");\n\nvar lists = document.querySelectorAll('.mdc-list');\n\nfor (var i = 0; i < lists.length; i++) {\n  var list = _material_list__WEBPACK_IMPORTED_MODULE_0__[\"MDCList\"].attachTo(lists[i]);\n  list.wrapFocus = true;\n}\n\n//# sourceURL=webpack:///./dist/scripts/list.js?");
 
 /***/ }),
 
@@ -153,7 +153,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mat
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"navigate\", function() { return navigate; });\nfunction navigate(element_id) {\n  var i, txtValue;\n  var tabGroups = document.querySelectorAll('.tab-groups');\n\n  for (i = 0; i < tabGroups.length; i++) {\n    txtValue = tabGroups[i].attributes.name.value;\n\n    if (txtValue.indexOf(element_id) > -1) {\n      tabGroups[i].style.display = \"\";\n    } else {\n      tabGroups[i].style.display = \"none\";\n    }\n  }\n}\nwindow.navigate = navigate;\n\n//# sourceURL=webpack:///./dist/scripts/navigation.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"navigate\", function() { return navigate; });\nfunction navigate(elementId) {\n  var tabGroups = document.querySelectorAll('.tab-groups');\n\n  for (var i = 0; i < tabGroups.length; i++) {\n    var txtValue = tabGroups[i].attributes.name.value;\n\n    if (txtValue.indexOf(elementId) > -1) {\n      tabGroups[i].style.display = '';\n    } else {\n      tabGroups[i].style.display = 'none';\n    }\n  }\n}\nwindow.navigate = navigate;\n\n//# sourceURL=webpack:///./dist/scripts/navigation.js?");
 
 /***/ }),
 
@@ -165,7 +165,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_ripple__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/ripple */ \"./node_modules/@material/ripple/index.js\");\n\nvar b, l, i;\nvar buttons = document.querySelectorAll('.mdc-button');\nvar listItems = document.querySelectorAll('.mdc-list-item');\nvar iconButtons = document.querySelectorAll('.mdc-icon-button');\n\nfor (b = 0; b < buttons.length; b++) {\n  var button = _material_ripple__WEBPACK_IMPORTED_MODULE_0__[\"MDCRipple\"].attachTo(buttons[b]);\n}\n\nfor (l = 0; l < listItems.length; l++) {\n  var listItem = _material_ripple__WEBPACK_IMPORTED_MODULE_0__[\"MDCRipple\"].attachTo(listItems[l]);\n}\n\nfor (i = 0; i < iconButtons.length; i++) {\n  var iconButton = _material_ripple__WEBPACK_IMPORTED_MODULE_0__[\"MDCRipple\"].attachTo(iconButtons[i]);\n}\n\n//# sourceURL=webpack:///./dist/scripts/ripple.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_ripple__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material/ripple */ \"./node_modules/@material/ripple/index.js\");\n\nvar buttons = document.querySelectorAll('.mdc-button');\nvar listItems = document.querySelectorAll('.mdc-list-item');\nvar iconButtons = document.querySelectorAll('.mdc-icon-button');\n\nfor (var b = 0; b < buttons.length; b++) {\n  new _material_ripple__WEBPACK_IMPORTED_MODULE_0__[\"MDCRipple\"].attachTo(buttons[b]);\n}\n\nfor (var l = 0; l < listItems.length; l++) {\n  new _material_ripple__WEBPACK_IMPORTED_MODULE_0__[\"MDCRipple\"].attachTo(listItems[l]);\n}\n\nfor (var i = 0; i < iconButtons.length; i++) {\n  new _material_ripple__WEBPACK_IMPORTED_MODULE_0__[\"MDCRipple\"].attachTo(iconButtons[i]);\n}\n\n//# sourceURL=webpack:///./dist/scripts/ripple.js?");
 
 /***/ }),
 
@@ -177,7 +177,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mat
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchTable\", function() { return searchTable; });\nfunction searchTable(element_id) {\n  var input, filter, table, rows, i, row, txtValue;\n  input = document.getElementById(element_id);\n  filter = input.value.toUpperCase();\n  table = document.getElementById(element_id + \"-table\");\n  rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');\n\n  for (i = 0; i < rows.length; i++) {\n    row = rows[i].getElementsByTagName(\"td\")[0];\n    txtValue = row.textContent || row.innerText;\n\n    if (txtValue.toUpperCase().indexOf(filter) > -1) {\n      rows[i].style.display = \"\";\n    } else {\n      rows[i].style.display = \"none\";\n    }\n  }\n}\nwindow.searchTable = searchTable;\n\n//# sourceURL=webpack:///./dist/scripts/table.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchTable\", function() { return searchTable; });\nfunction searchTable(elementId) {\n  var input = document.getElementById(elementId);\n  var filter = input.value.toUpperCase();\n  var table = document.getElementById(elementId + '-table');\n  var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');\n\n  for (var i = 0; i < rows.length; i++) {\n    var row = rows[i].getElementsByTagName('td')[0];\n    var txtValue = row.textContent || row.innerText;\n\n    if (txtValue.toUpperCase().indexOf(filter) > -1) {\n      rows[i].style.display = '';\n    } else {\n      rows[i].style.display = 'none';\n    }\n  }\n}\nwindow.searchTable = searchTable;\n\n//# sourceURL=webpack:///./dist/scripts/table.js?");
 
 /***/ }),
 

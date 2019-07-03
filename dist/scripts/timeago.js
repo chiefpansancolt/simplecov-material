@@ -1,3 +1,3 @@
-import { format, render, cancel, register } from 'timeago.js';
+import {render} from 'timeago.js';
 
 render(document.querySelectorAll('.timeago'));

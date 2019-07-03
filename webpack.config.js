@@ -4,12 +4,12 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   mode: 'development',
   entry: {
-    application: ['./dist/app.scss', './dist/app.js']
+    application: ['./dist/app.scss', './dist/app.js'],
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
-    libraryTarget: 'window'
+    libraryTarget: 'window',
   },
   module: {
     rules: [
@@ -19,22 +19,22 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'application.css'
-            }
+              name: 'application.css',
+            },
           },
           {loader: 'extract-loader'},
           {loader: 'css-loader'},
           {loader: 'postcss-loader',
             options: {
               plugins: () => [autoprefixer()],
-            }
+            },
           },
           {
             loader: 'sass-loader',
             options: {
               includePaths: ['./node_modules'],
             },
-          }
+          },
         ],
       },
       {
@@ -44,10 +44,10 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: 'images',
-              outputPath: 'images'
-            }
-          }
-        ]
+              outputPath: 'images',
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -56,26 +56,26 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: 'fonts',
-              outputPath: 'fonts'
-            }
-          }
-        ]
+              outputPath: 'fonts',
+            },
+          },
+        ],
       },
       {
         test: /\.m?js$/,
         include: [
-          path.resolve(__dirname, "dist")
+          path.resolve(__dirname, 'dist'),
         ],
         exclude: [
-          path.resolve(__dirname, "node_modules")
+          path.resolve(__dirname, 'node_modules'),
         ],
-        enforce: "pre",
-        enforce: "post",
-        loader: "babel-loader",
+        enforce: 'pre',
+        enforce: 'post',
+        loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env']
-        }
-      }
+          presets: ['@babel/preset-env'],
+        },
+      },
     ],
-  }
+  },
 };

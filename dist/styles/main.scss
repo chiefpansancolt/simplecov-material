@@ -8,15 +8,16 @@ section.footer {
   background: {
     color: #202124;
   }
+
   bottom: 0;
-  color: #fafafa;
+  color: #FAFAFA;
   height: 50px;
+  position: absolute;
+  width: 100%;
   margin: {
     left: -18px;
     right: -18px;
   }
-  position: absolute;
-  width: 100%;
 
   div {
     padding: {
@@ -28,7 +29,7 @@ section.footer {
     }
 
     a {
-      color: #fafafa !important;
+      color: #FAFAFA !important;
     }
   }
 }
@@ -61,7 +62,6 @@ section.footer {
   }
 }
 
-// only apply this style if below top app bar
 .mdc-top-app-bar {
   z: {
     index: 7;
@@ -69,18 +69,19 @@ section.footer {
 }
 
 .red {
-  color: #d32f2f;
+  color: #D32F2F;
 }
 
 .yellow {
-  color: #fbc02d;
+  color: #FBC02D;
 }
 
 .green {
-  color: #388e3c;
+  color: #388E3C;
 }
 
 .file_list_container {
+
   .mdc-card {
     margin: {
       top: 25px;
@@ -105,7 +106,8 @@ section.footer {
   border: {
     radius: 10px;
   }
-  color: #ffffff;
+
+  color: #FFF;
   padding: 25px 5px;
   text: {
     align: center;
@@ -117,8 +119,8 @@ section.footer {
       weight: 500;
     }
     margin: {
-      top: 0;
       bottom: 0;
+      top: 0;
     }
   }
 
@@ -127,7 +129,6 @@ section.footer {
       bottom: 5px;
       top: 20px;
     }
-
   }
 }
 

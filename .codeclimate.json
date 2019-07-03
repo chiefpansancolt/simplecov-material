@@ -76,10 +76,7 @@
 		},
 		"stylelint": {
 			"enabled": true
-		},
-    "shellcheck": {
-      "enabled": true
-    }
+		}
 	},
 	"exclude_patterns": [
     "**/public/",
