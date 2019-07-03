@@ -1,0 +1,182 @@
+.mdc-dialog--scrollable {
+  .mdc-dialog__content {
+    padding: 0;
+  }
+}
+
+.mdc-dialog {
+  .mdc-dialog__surface {
+    max: {
+      width: 100%;
+    }
+    min: {
+      width: 560px;
+    }
+
+    .mdc-dialog__content {
+      padding: 0;
+    }
+  }
+
+  .mdc-dialog__actions {
+    justify: {
+      content: space-between !important;
+    }
+
+    .text {
+      justify: {
+        content: flex-start !important;
+      }
+    }
+
+    .buttons {
+      justify: {
+        content: flex-end !important;
+      }
+    }
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  pre {
+    color: #000;
+    margin: 0;
+    padding: 0;
+    white: {
+      space: normal;
+    }
+  }
+
+  code {
+    color: #000;
+  }
+
+  pre {
+    background: {
+      color: #546e7a;
+    }
+
+    ol {
+      color: #ffffff;
+      font-size: 12px;
+      margin: {
+        bottom: 0;
+        left: 45px;
+        right: 0;
+        top: 0;
+      }
+      padding: 0px;
+    }
+
+    li {
+      border: {
+        left: 5px solid #ffffff;
+      }
+      margin: 0px;
+      padding: 2px 6px;
+
+      code {
+        white: {
+          space: pre;
+          space: pre-wrap;
+        }
+      }
+    }
+
+    .hits {
+      background: {
+        color: #212121;
+      }
+      border: {
+        radius: 6px;
+      }
+      color: #ffffff;
+      float: right;
+      font: {
+        size: 10px;
+        weight: bold;
+      }
+      margin: {
+        left: 10px;
+      }
+      padding: {
+        left: 5px;
+        right: 5px;
+      }
+      text: {
+        align: center;
+      }
+    }
+  }
+
+  .covered {
+    border: {
+      color: #388e3c;
+    }
+  }
+  .missed {
+    border: {
+      color: #d32f2f;
+    }
+  }
+  .never {
+    border: {
+      color: #000000;
+    }
+  }
+  .skipped {
+    border: {
+      color: #fbc02d;
+    }
+  }
+  .covered {
+    &:nth-child(odd) {
+      background: {
+        color: #81c784;
+      }
+    }
+    &:nth-child(even) {
+      background: {
+        color: #a5d6a7;
+      }
+    }
+  }
+  .missed {
+    &:nth-child(odd) {
+      background: {
+        color: #e57373;
+      }
+    }
+    &:nth-child(even) {
+      background: {
+        color: #ef9a9a;
+      }
+    }
+  }
+  .never {
+    &:nth-child(odd) {
+      background: {
+        color: #efefef;
+      }
+    }
+    &:nth-child(even) {
+      background: {
+        color: #f4f4f4;
+      }
+    }
+  }
+  .skipped {
+    &:nth-child(odd) {
+      background: {
+        color: #fff176;
+      }
+    }
+    &:nth-child(even) {
+      background: {
+        color: #fff59d;
+      }
+    }
+  }
+}

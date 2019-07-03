@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+section.footer {
+  background: {
+    color: #202124;
+  }
+  bottom: 0;
+  color: #fafafa;
+  height: 50px;
+  margin: {
+    left: -18px;
+    right: -18px;
+  }
+  position: absolute;
+  width: 100%;
+
+  div {
+    padding: {
+      right: 15px;
+      top: 15px;
+    }
+    text: {
+      align: right;
+    }
+
+    a {
+      color: #fafafa !important;
+    }
+  }
+}
+
+.bottom-spacer {
+  padding: {
+    bottom: 75px;
+  }
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  height: 100%;
+  overflow: auto;
+  padding: 0 18px;
+}
+
+.app-bar {
+  position: absolute;
+
+  .mdc-top-app-bar__navigation-icon {
+    text: {
+      decoration: none;
+    }
+  }
+}
+
+// only apply this style if below top app bar
+.mdc-top-app-bar {
+  z: {
+    index: 7;
+  }
+}
+
+.red {
+  color: #d32f2f;
+}
+
+.yellow {
+  color: #fbc02d;
+}
+
+.green {
+  color: #388e3c;
+}
+
+.file_list_container {
+  .mdc-card {
+    margin: {
+      top: 25px;
+    }
+  }
+}
+
+.center {
+  text: {
+    align: center !important;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.card-tile {
+  background: {
+    color: #202124;
+  }
+  border: {
+    radius: 10px;
+  }
+  color: #ffffff;
+  padding: 25px 5px;
+  text: {
+    align: center;
+  }
+
+  .card-title {
+    font: {
+      size: 1.1rem;
+      weight: 500;
+    }
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  .card-data {
+    margin: {
+      bottom: 5px;
+      top: 20px;
+    }
+
+  }
+}
+
+.parenthese::before {
+  content: "(";
+}
+
+.parenthese::after {
+  content: ")";
+}

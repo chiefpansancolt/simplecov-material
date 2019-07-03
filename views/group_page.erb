@@ -1,0 +1,100 @@
+<div class="tab-groups" name="<%= title_id %>" style="<%= hide_show(title_id) %>">
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+        <div class="mdc-card card-tile">
+          <p class="card-title">Covered</p>
+          <h4 class="card-data mdc-typography--headline4 <%= coverage_class(files.covered_percent) %>">
+              <%= files.covered_percent.round(2) %>%
+          </h4>
+        </div>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+        <div class="mdc-card card-tile">
+          <p class="card-title">Hits/Line</p>
+          <h4 class="card-data mdc-typography--headline4 <%= strength_class(files.covered_strength) %>">
+              <%= files.covered_strength.round(2) %>
+          </h4>
+        </div>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+        <div class="mdc-card card-tile">
+          <p class="card-title"># of Files</p>
+          <h4 class="card-data mdc-typography--headline4"><%= files.length %></h4>
+        </div>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+        <div class="mdc-card card-tile">
+          <p class="card-title">Relevent Lines</p>
+          <h4 class="card-data mdc-typography--headline4"><%= files.lines_of_code %></h4>
+        </div>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+        <div class="mdc-card card-tile">
+          <p class="card-title">Lines Covered</p>
+          <h4 class="card-data mdc-typography--headline4 green"><%= files.covered_lines %></h4>
+        </div>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+        <div class="mdc-card card-tile">
+          <p class="card-title">Lines Missed</p>
+          <h4 class="card-data mdc-typography--headline4 red"><%= files.missed_lines %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdc-card mdc-card--outlined">
+    <div class="mdc-text-field mdc-text-field--with-trailing-icon">
+      <i class="material-icons mdc-text-field__icon">search</i>
+      <input type="search" class="mdc-text-field__input search-box" onkeyup="searchTable(this.id)" onsearch="searchTable(this.id)" id="<%= title_id %>">
+      <div class="mdc-line-ripple"></div>
+      <label for="text-field-hero-input" class="mdc-floating-label">Search</label>
+    </div>
+    <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent" aria-hidden="false">
+      You can search based on File column.
+    </div>
+
+    <table class="table table-hover table-condensed" id="<%= title_id %>-table">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>% Covered</th>
+            <th>Lines</th>
+            <th>Relevant Lines</th>
+            <th>Lines Covered</th>
+            <th>Lines Missed</th>
+            <th>Avg Hits/Line</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% files.each do |source_file| %>
+            <tr class="clickable" name="<%= shortened_filename(source_file) %>"
+                onclick="openModal(this.attributes.name.value)">
+              <td data-title="File">
+                <%= shortened_filename(source_file) %>
+              </td>
+              <td class="center <%= coverage_class(source_file.covered_percent) %>" data-title="% Covered">
+                <%= source_file.covered_percent.round(2).to_s %>%
+              </td>
+              <td class="center" data-title="Lines">
+                <%= source_file.lines.count %>
+              </td>
+              <td class="center" data-title="Relevant Lines">
+                <%= source_file.covered_lines.count + source_file.missed_lines.count %>
+              </td>
+              <td class="center" data-title="Lines Covered">
+                <%= source_file.covered_lines.count %>
+              </td>
+              <td class="center" data-title="Lines Missed">
+                <%= source_file.missed_lines.count %>
+              </td>
+              <td class="center" data-title="Avg Hits/Line">
+                <%= source_file.covered_strength %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
