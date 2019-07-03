@@ -68,11 +68,17 @@
 			"channel": "rubocop-0-71"
 		},
 		"eslint": {
-			"enabled": true
+			"enabled": true,
+      "config": {
+        "config": "./.eslintrc"
+      }
 		},
 		"stylelint": {
 			"enabled": true
-		}
+		},
+    "shellcheck": {
+      "enabled": true
+    }
 	},
 	"exclude_patterns": [
 		"config/",

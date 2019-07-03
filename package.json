@@ -8,8 +8,8 @@
     "test:open": "open coverage/index.html",
     "test": "npm-run-all test:*",
     "lint:ruby": "rubocop",
-    "lint:js": "eslint app/**/*.js",
-    "lint:css": "stylelint app/**/*.scss",
+    "lint:js": "eslint dist/**/*.js",
+    "lint:css": "stylelint dist/**/*.scss",
     "lint": "npm-run-all lint:*"
   },
   "repository": {
