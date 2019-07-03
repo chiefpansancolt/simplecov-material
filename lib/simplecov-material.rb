@@ -75,6 +75,10 @@ module SimpleCov
         template("group_page").result(binding)
       end
 
+      def remove_spaces(name)
+        name.gsub(/^[^a-zA-Z]+/, "").gsub(/[^a-zA-Z0-9\-\_]/, "")
+      end
+
       def coverage_class(covered_percent)
         if covered_percent > 90
           "green"

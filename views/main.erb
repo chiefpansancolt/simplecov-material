@@ -29,7 +29,7 @@
             </span>
           </a>
           <% result.groups.each do |name, files| %>
-            <a class="mdc-list-item" href="#" name="<%= name %>" onclick="navigate(this.name)">
+            <a class="mdc-list-item" href="#" name="<%= remove_spaces(name) %>" onclick="navigate(this.name)">
               <i class="material-icons mdc-list-item__graphic" aria-hidden="true">collections_bookmark</i>
               <span class="mdc-list-item__text">
                 <%= name %>

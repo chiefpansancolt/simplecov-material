@@ -59,37 +59,37 @@
         <thead>
           <tr>
             <th>File</th>
-            <th>% Covered</th>
-            <th>Lines</th>
-            <th>Relevant Lines</th>
-            <th>Lines Covered</th>
-            <th>Lines Missed</th>
-            <th>Avg Hits/Line</th>
+            <th class="center">% Covered</th>
+            <th class="center">Lines</th>
+            <th class="center">Relevant Lines</th>
+            <th class="center">Lines Covered</th>
+            <th class="center">Lines Missed</th>
+            <th class="center">Avg Hits/Line</th>
           </tr>
         </thead>
         <tbody>
           <% files.each do |source_file| %>
             <tr class="clickable" name="<%= shortened_filename(source_file) %>"
                 onclick="openModal(this.attributes.name.value)">
-              <td data-title="File">
-                <%= shortened_filename(source_file) %>
+              <td class="overflow" width="50%">
+                <div><%= shortened_filename(source_file) %></div>
               </td>
-              <td class="center <%= coverage_class(source_file.covered_percent) %>" data-title="% Covered">
+              <td class="center <%= coverage_class(source_file.covered_percent) %>" width="9%">
                 <%= source_file.covered_percent.round(2).to_s %>%
               </td>
-              <td class="center" data-title="Lines">
+              <td class="center" width="5%">
                 <%= source_file.lines.count %>
               </td>
-              <td class="center" data-title="Relevant Lines">
+              <td class="center" width="9%">
                 <%= source_file.covered_lines.count + source_file.missed_lines.count %>
               </td>
-              <td class="center" data-title="Lines Covered">
+              <td class="center" width="9%">
                 <%= source_file.covered_lines.count %>
               </td>
-              <td class="center" data-title="Lines Missed">
+              <td class="center" width="9%">
                 <%= source_file.missed_lines.count %>
               </td>
-              <td class="center" data-title="Avg Hits/Line">
+              <td class="center" width="9%">
                 <%= source_file.covered_strength %>
               </td>
             </tr>

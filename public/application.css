@@ -10955,6 +10955,13 @@ table {
       transition: all .3s ease;
       text-align: left;
       vertical-align: top; }
+      .table thead tr th.overflow,
+      .table thead tr td.overflow,
+      .table tbody tr th.overflow,
+      .table tbody tr td.overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
   .table thead tr th {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     color: #757575;
@@ -10978,7 +10985,8 @@ table {
 
 .mdc-dialog .mdc-dialog__surface {
   max-width: 100%;
-  min-width: 560px; }
+  min-width: 560px;
+  width: 1000px; }
   .mdc-dialog .mdc-dialog__surface .mdc-dialog__content {
     padding: 0; }
 

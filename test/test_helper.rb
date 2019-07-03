@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "bundler/setup"
 require "simplecov"
-require "simplecov-material"
-require "minitest/autorun"
+
+SimpleCov.start do
+  add_filter "/test/"
+end
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::MaterialFormatter
 ]
 
-SimpleCov.start do
-  add_group "Libraries", "lib"
-  track_files "{lib}/**/*.rb"
-end
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+require "minitest/autorun"
+require "minitest/pride"
+require "minitest/ci"
+require "mocha/minitest"
