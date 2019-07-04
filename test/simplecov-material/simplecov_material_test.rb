@@ -17,12 +17,7 @@ class SimplecovMaterialTest < Minitest::Test
     assert(version == "0.1.0")
   end
 
-  def test_execution
-    # SimpleCov.stubs(:coverage_path).returns("/tmp")
-    # SimpleCov::Formatter::MaterialFormatter.stubs(:result_file_name).returns(
-    #   "index.html"
-    # )
-
+  def test_execution # rubocop:disable MethodLength
     @original_result = {
       source_fixture("sample.rb") => [nil, 1, 1, 1, nil, nil, 1, 1, nil, nil],
       source_fixture("app/models/user.rb") => [
