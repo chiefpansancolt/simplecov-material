@@ -58,38 +58,40 @@
     <table class="table table-hover table-condensed" id="<%= title_id %>-table">
         <thead>
           <tr>
-            <th>File</th>
-            <th class="center">% Covered</th>
-            <th class="center">Lines</th>
-            <th class="center">Relevant Lines</th>
-            <th class="center">Lines Covered</th>
-            <th class="center">Lines Missed</th>
-            <th class="center">Avg Hits/Line</th>
+            <th class="width-50">File</th>
+            <th class="width-9 center">% Covered</th>
+            <th class="width-5 center">Lines</th>
+            <th class="width-9 center">Relevant Lines</th>
+            <th class="width-9 center">Lines Covered</th>
+            <th class="width-9 center">Lines Missed</th>
+            <th class="width-9 center">Avg Hits/Line</th>
           </tr>
         </thead>
         <tbody>
           <% files.each do |source_file| %>
             <tr class="clickable" name="<%= shortened_filename(source_file) %>"
                 onclick="openModal(this.attributes.name.value)">
-              <td class="overflow" width="50%" title="<%= shortened_filename(source_file) %>">
-                <div><%= shortened_filename(source_file) %></div>
+              <td class="width-50" title="<%= shortened_filename(source_file) %>">
+                <div class="overflow">
+                  <%= shortened_filename(source_file) %>
+                </div>
               </td>
-              <td class="center <%= coverage_class(source_file.covered_percent) %>" width="9%">
+              <td class="width-9 <%= coverage_class(source_file.covered_percent) %>">
                 <%= source_file.covered_percent.round(2).to_s %>%
               </td>
-              <td class="center" width="5%">
+              <td class="width-5 center">
                 <%= source_file.lines.count %>
               </td>
-              <td class="center" width="9%">
+              <td class="width-9 center">
                 <%= source_file.covered_lines.count + source_file.missed_lines.count %>
               </td>
-              <td class="center" width="9%">
+              <td class="width-9 center">
                 <%= source_file.covered_lines.count %>
               </td>
-              <td class="center" width="9%">
+              <td class="width-9 center">
                 <%= source_file.missed_lines.count %>
               </td>
-              <td class="center" width="9%">
+              <td class="width-9 center">
                 <%= source_file.covered_strength %>
               </td>
             </tr>
