@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite time='0.007009' skipped='0' failures='0' errors='0' name="SimplecovMaterialTest" assertions='4' tests='3' timestamp="2019-07-03T12:02:51-04:00">
-  <testcase time='0.000054' file="test/simplecov-material/simplecov_material_test.rb" name="test_version" assertions='1'>
-  </testcase>
-  <testcase time='0.000028' file="test/simplecov-material/simplecov_material_test.rb" name="test_defined" assertions='2'>
-  </testcase>
-  <testcase time='0.006927' file="test/simplecov-material/simplecov_material_test.rb" name="test_execution" assertions='1'>
-  </testcase>
-</testsuite>
