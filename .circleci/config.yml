@@ -1,10 +1,235 @@
 version: 2
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/ruby:2.6.3-node-browsers
+  test-ruby-2-6:
+    environment:
+      CC_TEST_REPORTER_ID: 89272279b2a5cc5c3a113369dbec3d13632aa4a2344b2e9bb15668cd97c54826
     working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.6.3
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
 
     steps:
       - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      - run:
+          name: Run Test
+          command: |
+            ./cc-test-reporter before-build
+            bundle exec rake test
+            ./cc-test-reporter after-build
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+  test-ruby-2-5:
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.5.5
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
+    steps:
+      - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Run Test
+          command: bundle exec rake test
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+  test-ruby-2-4:
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.4.6
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
+    steps:
+      - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Run Test
+          command: bundle exec rake test
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+  test-ruby-2-3:
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.3.7
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
+    steps:
+      - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Run Test
+          command: bundle exec rake test
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+  test-ruby-2-2:
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.2.10
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
+    steps:
+      - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Run Test
+          command: bundle exec rake test
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+  test-ruby-2-1:
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.1.10
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
+    steps:
+      - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Run Test
+          command: bundle exec rake test
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+  test-ruby-2-0:
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/ruby:2.0.0-p648
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          RAILS_ENV: test
+
+    steps:
+      - checkout
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Run Test Classes
+      - run:
+          name: Run Test
+          command: bundle exec rake test
+          when: always
+
+      # Collect Reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+      - store_test_results:
+          path: test/reports
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test-ruby-2-6
+      - test-ruby-2-5
+      - test-ruby-2-4
+      - test-ruby-2-3
+      - test-ruby-2-2
+      - test-ruby-2-1
+      - test-ruby-2-0
