@@ -10,7 +10,8 @@
     "lint:ruby": "rubocop",
     "lint:js": "eslint dist webpack.config.js",
     "lint:css": "stylelint dist/**/*.scss",
-    "lint": "npm-run-all lint:*"
+    "lint": "npm-run-all lint:*",
+    "gem:build": "bundle exec rake build"
   },
   "repository": {
     "type": "git",
