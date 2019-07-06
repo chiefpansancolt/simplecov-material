@@ -1,4 +1,4 @@
-# simplecov-material
+# Simplecov Material
 HTML Material Design View for Simplecov formatter
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0eb25c5bffe23ccf5796/maintainability)](https://codeclimate.com/github/chiefpansancolt/simplecov-material/maintainability)
