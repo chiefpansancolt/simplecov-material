@@ -20,25 +20,33 @@
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
         <div class="mdc-card card-tile">
           <p class="card-title"># of Files</p>
-          <h4 class="card-data mdc-typography--headline4"><%= files.length %></h4>
+          <h4 class="card-data mdc-typography--headline4">
+            <%= format_number(files.length) %>
+          </h4>
         </div>
       </div>
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
         <div class="mdc-card card-tile">
           <p class="card-title">Relevent Lines</p>
-          <h4 class="card-data mdc-typography--headline4"><%= files.lines_of_code %></h4>
+          <h4 class="card-data mdc-typography--headline4">
+            <%= format_number(files.lines_of_code) %>
+          </h4>
         </div>
       </div>
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
         <div class="mdc-card card-tile">
           <p class="card-title">Lines Covered</p>
-          <h4 class="card-data mdc-typography--headline4 green"><%= files.covered_lines %></h4>
+          <h4 class="card-data mdc-typography--headline4 green">
+            <%= format_number(files.covered_lines) %>
+          </h4>
         </div>
       </div>
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
         <div class="mdc-card card-tile">
           <p class="card-title">Lines Missed</p>
-          <h4 class="card-data mdc-typography--headline4 red"><%= files.missed_lines %></h4>
+          <h4 class="card-data mdc-typography--headline4 red">
+            <%= format_number(files.missed_lines) %>
+          </h4>
         </div>
       </div>
     </div>
@@ -80,19 +88,19 @@
                 <%= source_file.covered_percent.round(2).to_s %>%
               </td>
               <td class="width-5 center">
-                <%= source_file.lines.count %>
+                <%= format_number(source_file.lines.count) %>
               </td>
               <td class="width-9 center">
-                <%= source_file.covered_lines.count + source_file.missed_lines.count %>
+                <%= format_number(source_file.covered_lines.count + source_file.missed_lines.count) %>
               </td>
               <td class="width-9 center">
-                <%= source_file.covered_lines.count %>
+                <%= format_number(source_file.covered_lines.count) %>
               </td>
               <td class="width-9 center">
-                <%= source_file.missed_lines.count %>
+                <%= format_number(source_file.missed_lines.count) %>
               </td>
               <td class="width-9 center">
-                <%= source_file.covered_strength %>
+                <%= format_number(source_file.covered_strength) %>
               </td>
             </tr>
           <% end %>

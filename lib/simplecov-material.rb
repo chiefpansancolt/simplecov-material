@@ -79,6 +79,13 @@ module SimpleCov
         name.gsub(/^[^a-zA-Z]+/, "").gsub(/[^a-zA-Z0-9\-\_]/, "")
       end
 
+      def format_number(number)
+        whole, decimal = number.to_s.split(".")
+        whole_with_commas =
+          whole.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
+        [whole_with_commas, decimal].compact.join(".")
+      end
+
       def coverage_class(covered_percent)
         if covered_percent > 90
           "green"

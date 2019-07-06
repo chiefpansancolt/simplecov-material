@@ -31,9 +31,13 @@
         <div class="text">
           <b><%= file.lines_of_code %></b> Relevant Lines
           |
-          <span class="green"><b><%= file.covered_lines.count %></b></span> Lines Covered
+          <span class="green"><b>
+            <%= format_number(file.covered_lines.count) %>
+          </b></span> Lines Covered
           |
-          <span class="red"><b><%= file.missed_lines.count %></b></span> Lines Missed
+          <span class="red"><b>
+            <%= format_number(file.missed_lines.count) %>
+          </b></span> Lines Missed
         </div>
         <div class="buttons">
           <button type="button" class="mdc-button mdc-button--raised mdc-dialog__button" data-mdc-dialog-action="close">
