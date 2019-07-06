@@ -13,7 +13,7 @@ and stronger!
 - [Code Contributions](#code-contributions)
 - [Pull Requests](#pull-requests)
 - [Additional Notes](#additional-notes)
-  - [Issue and Pull Request Labels](#issues-and-pull-request-labels)
+  - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
 
 ## Code of Conduct
 
