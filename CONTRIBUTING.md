@@ -20,8 +20,7 @@ and stronger!
 This project and everyone participating in it is governed by the [Simplecov
 Material Code of Conduct](https://github.com/chiefpansancolt/simplecov-material/blob/master/CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report
-unacceptable behavior to
-[chiefpansancolt@gmail.com](mailto:chiefpansancolt@gmail.com).
+unacceptable behavior to chiefpansancolt@gmail.com.
 
 ## How can I Contribute
 
@@ -81,7 +80,7 @@ While the prerequisites above must be satisfied prior to having your pull reques
 
 ### Issue and Pull Request Labels
 
-This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across all Atom repositories, but some are specific to `atom/atom`.
+This section lists the labels we use to help us track and manage issues and pull requests.
 
 [GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in opening an Issue or perhaps opening a pull request. To help you find issues and pull requests, each label is listed with search links for finding open items with that label in Simplecov Material. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
 
