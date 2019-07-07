@@ -61,9 +61,11 @@ Check out the [Change Log](https://github.com/chiefpansancolt/simplecov-material
 Bug Reports, Feature Requests, and Pull Requests are welcome on GitHub at https://github.com/chiefpansancolt/simplecov-material. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://github.com/chiefpansancolt/simplecov-material/blob/master/CODE_OF_CONDUCT.md) code of conduct.
 
 To see more about Contributing check out this [document](https://github.com/chiefpansancolt/simplecov-material/blob/master/CONTRIBUTING.md).
-Fork Repo and create new branch
-Once all is changed and committed create a pull request.
-Ensure all merge conflicts are fixed and CI is passing.
+
+- Fork Repo and create new branch
+- Once all is changed and committed create a pull request.
+
+**Ensure all merge conflicts are fixed and CI is passing.**
 
 ## Development
 
