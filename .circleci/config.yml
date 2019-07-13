@@ -74,7 +74,7 @@ build_steps:
   - &bundle_install
     run:
       name: Bundle Install
-      command: bundle check || bundle install --deployment
+      command: bundle check || bundle install
 
   - &setup_code_climate
     run:
