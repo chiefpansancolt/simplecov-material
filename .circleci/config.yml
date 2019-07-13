@@ -1,8 +1,12 @@
 version: 2
-jobs:
-  test-ruby-2-6:
-    environment:
-      CC_TEST_REPORTER_ID: 89272279b2a5cc5c3a113369dbec3d13632aa4a2344b2e9bb15668cd97c54826
+
+node_version: &node_version
+  working_directory: ~/simplecov-material
+  docker:
+    - image: circleci/node:latest
+
+ruby_versions:
+  - &ruby-2-6
     working_directory: ~/simplecov-material
     docker:
       - image: circleci/ruby:2.6.3
@@ -11,37 +15,7 @@ jobs:
           BUNDLE_RETRY: 3
           RAILS_ENV: test
 
-    steps:
-      - checkout
-
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
-
-      # Run Test Classes
-      - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-
-      - run:
-          name: Run Test
-          command: |
-            ./cc-test-reporter before-build
-            bundle exec rake test
-            ./cc-test-reporter after-build
-          when: always
-
-      # Collect Reports
-      - store_artifacts:
-          path: coverage
-          destination: coverage
-
-      - store_test_results:
-          path: test/reports
-
-  test-ruby-2-5:
+  - &ruby-2-5
     working_directory: ~/simplecov-material
     docker:
       - image: circleci/ruby:2.5.5
@@ -50,28 +24,7 @@ jobs:
           BUNDLE_RETRY: 3
           RAILS_ENV: test
 
-    steps:
-      - checkout
-
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
-
-      # Run Test Classes
-      - run:
-          name: Run Test
-          command: bundle exec rake test
-          when: always
-
-      # Collect Reports
-      - store_artifacts:
-          path: coverage
-          destination: coverage
-
-      - store_test_results:
-          path: test/reports
-
-  test-ruby-2-4:
+  - &ruby-2-4
     working_directory: ~/simplecov-material
     docker:
       - image: circleci/ruby:2.4.6
@@ -80,28 +33,7 @@ jobs:
           BUNDLE_RETRY: 3
           RAILS_ENV: test
 
-    steps:
-      - checkout
-
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
-
-      # Run Test Classes
-      - run:
-          name: Run Test
-          command: bundle exec rake test
-          when: always
-
-      # Collect Reports
-      - store_artifacts:
-          path: coverage
-          destination: coverage
-
-      - store_test_results:
-          path: test/reports
-
-  test-ruby-2-3:
+  - &ruby-2-3
     working_directory: ~/simplecov-material
     docker:
       - image: circleci/ruby:2.3.7
@@ -110,32 +42,155 @@ jobs:
           BUNDLE_RETRY: 3
           RAILS_ENV: test
 
+build_steps:
+  - &install_yarn
+    run:
+      name: Update Yarn to Latest
+      command: sudo npm install -g yarn
+
+  - &yarn_restore_cache
+    restore_cache:
+      keys:
+        - chris-pezza-yarn{{ checksum "yarn.lock" }}
+        - chris-pezza-yarn
+
+  - &yarn_install
+    run:
+      name: Yarn Install
+      command: yarn install --frozen-lockfile
+
+  - &yarn_save_cache
+    save_cache:
+      key: chris-pezza-yarn{{ checksum "yarn.lock" }}
+      paths:
+        - ~/.cache/yarn
+
+  - &build_output
+    run:
+      name: Build Public files
+      command: yarn build
+
+  - &bundle_install
+    run:
+      name: Bundle Install
+      command: bundle check || bundle install --deployment
+
+  - &setup_code_climate
+    run:
+      name: Setup Code Climate test-reporter
+      command: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+
+  - &run_test_cc
+    run:
+      name: Run Tests
+      command: |
+        ./cc-test-reporter before-build
+        bundle exec rake test
+        ./cc-test-reporter after-build
+      when: always
+
+  - &run_test
+    run:
+      name: Run Tests
+      command: bundle exec rake test
+      when: always
+
+  - &store_coverage
+    # collect reports
+    store_artifacts:
+      path: coverage
+      destination: coverage
+
+  - &store_public
+    # collect public
+    store_artifacts:
+      path: public
+      destination: public
+
+  - &store_test_results
+    store_test_results:
+      path: test/reports
+
+jobs:
+  build:
+    <<: *node_version
     steps:
       - checkout
+      - *install_yarn
+      - *yarn_restore_cache
+      - *yarn_install
+      - *yarn_save_cache
+      - *build_output
+      - *store_public
 
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
+  test-ruby-2-6:
+    <<: *ruby-2-6
+    steps:
+      - checkout
+      - *bundle_install
+      - *run_test
+      - *store_coverage
+      - *store_test_results
 
-      # Run Test Classes
-      - run:
-          name: Run Test
-          command: bundle exec rake test
-          when: always
+  test-ruby-2-5:
+    <<: *ruby-2-5
+    steps:
+      - checkout
+      - *bundle_install
+      - *run_test
+      - *store_coverage
+      - *store_test_results
 
-      # Collect Reports
-      - store_artifacts:
-          path: coverage
-          destination: coverage
+  test-ruby-2-4:
+    <<: *ruby-2-4
+    steps:
+      - checkout
+      - *bundle_install
+      - *run_test
+      - *store_coverage
+      - *store_test_results
 
-      - store_test_results:
-          path: test/reports
+  test-ruby-2-3:
+    <<: *ruby-2-3
+    steps:
+      - checkout
+      - *bundle_install
+      - *run_test
+      - *store_coverage
+      - *store_test_results
+
+  test:
+    <<: *ruby-2-6
+    steps:
+      - checkout
+      - *bundle_install
+      - *setup_code_climate
+      - *run_test_cc
+      - *store_coverage
+      - *store_test_results
 
 workflows:
   version: 2
   test:
     jobs:
-      - test-ruby-2-6
-      - test-ruby-2-5
-      - test-ruby-2-4
-      - test-ruby-2-3
+      - build
+      - test-ruby-2-6:
+          require:
+            - build
+      - test-ruby-2-5:
+          require:
+            - build
+      - test-ruby-2-4:
+          require:
+            - build
+      - test-ruby-2-3:
+          require:
+            - build
+      - test:
+          require:
+            - test-ruby-2-6
+            - test-ruby-2-5
+            - test-ruby-2-4
+            - test-ruby-2-3
