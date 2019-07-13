@@ -178,19 +178,19 @@ workflows:
     jobs:
       - build
       - test-ruby-2-6:
-          require:
+          requires:
             - build
       - test-ruby-2-5:
-          require:
+          requires:
             - build
       - test-ruby-2-4:
-          require:
+          requires:
             - build
       - test-ruby-2-3:
-          require:
+          requires:
             - build
       - test:
-          require:
+          requires:
             - test-ruby-2-6
             - test-ruby-2-5
             - test-ruby-2-4
