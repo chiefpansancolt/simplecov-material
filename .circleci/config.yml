@@ -1,9 +1,10 @@
 version: 2
 
-node_version: &node_version
-  working_directory: ~/simplecov-material
-  docker:
-    - image: circleci/node:latest
+node_version:
+  - &node_version
+    working_directory: ~/simplecov-material
+    docker:
+      - image: circleci/node:latest
 
 ruby_versions:
   - &ruby-2-6
@@ -173,7 +174,7 @@ jobs:
 
 workflows:
   version: 2
-  test:
+  build-test:
     jobs:
       - build
       - test-ruby-2-6:
