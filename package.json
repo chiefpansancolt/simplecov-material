@@ -1,6 +1,6 @@
 {
   "name": "simplecov-material",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "HTML Material Design View for Simplecov formatter",
   "scripts": {
     "build": "webpack --config webpack.config.js",
