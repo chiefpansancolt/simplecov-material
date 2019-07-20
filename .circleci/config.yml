@@ -277,10 +277,10 @@ workflows:
             branches:
               only:
                 - master
-        - publish_patch:
-            requires:
-              - patch
-            filters:
-              branches:
-                only:
-                  - master
+      - publish_patch:
+          requires:
+            - patch
+          filters:
+            branches:
+              only:
+                - master
