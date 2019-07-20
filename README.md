@@ -23,12 +23,30 @@ Generates a HTML Material Design report generated from Simplecov using ruby 2.2 
 
 Add the below to your Gemfile to make Simplecov Material available as a formatter for your application
 
+### Ruby Gems Host
+
 ```ruby
 # ./Gemfile
 
 group :test do
   gem "simplecov"
   gem "simplecov-material"
+end
+```
+
+### Github Rubygems Host
+
+```ruby
+# ./Gemfile
+
+group :test do
+  gem "simplecov"
+end
+
+source "https://rubygems.pkg.github.com/chiefpansancolt" 
+  group :test do
+    gem "simplecov-material"
+  end
 end
 ```
 
