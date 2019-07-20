@@ -23,7 +23,8 @@ abort("\n== Version Type incorrect ==") unless VERSION_TYPES.include?(ARGV[0])
 
 abort("\n== Not on master") unless system(MASTER_CHECK)
 
-current_version = SimplecovMaterial::VERSION.split(".").map(&:to_i)
+current_version =
+  Simplecov::Formatter::MaterialFormatter::VERSION.split(".").map(&:to_i)
 
 case ARGV[0]
 when "major"
