@@ -4,7 +4,6 @@
 require "pathname"
 require "fileutils"
 require "json"
-require_relative "../lib/simplecov-material/version"
 
 # path to your application root.
 APP_ROOT = Pathname.new File.expand_path("..", __dir__)
@@ -24,7 +23,7 @@ abort("\n== Version Type incorrect ==") unless VERSION_TYPES.include?(ARGV[0])
 abort("\n== Not on master") unless system(MASTER_CHECK)
 
 current_version =
-  Simplecov::Formatter::MaterialFormatter::VERSION.split(".").map(&:to_i)
+  JSON.parse(File.read("package.json"))["version"].split(".").map(&:to_i)
 
 case ARGV[0]
 when "major"
@@ -40,11 +39,16 @@ end
 
 joined_version = current_version.join(".")
 
-FileUtils.chdir APP_ROOT do
+FileUtils.chdir APP_ROOT do # rubocop:disable BlockLength
   contents = <<~FILE
     # frozen_string_literal: true
-    module SimplecovMaterial
-      VERSION = "#{joined_version}"
+
+    module SimpleCov
+      module Formatter
+        class MaterialFormatter
+          VERSION = "#{joined_version}"
+        end
+      end
     end
   FILE
 
@@ -55,7 +59,7 @@ FileUtils.chdir APP_ROOT do
   File.write("lib/simplecov-material/version.rb", contents)
 
   puts "== Updated version in package.json file to #{joined_version} =="
-  File.write("package.json", "w") do |f|
+  File.open("package.json", "w") do |f|
     f.write(JSON.pretty_generate(package))
   end
 
