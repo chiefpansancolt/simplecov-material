@@ -38,6 +38,12 @@ To use Simplecov Material you will need to ensure your Formatter is set to use S
 
 In your helper ensure your line about formatter usage is one of the following.
 
+Ensure to add the require tag at the top of your helper class where Simplecov is configured
+
+```ruby
+require "simplecov-material"
+```
+
 **Single Formatter Usage:**
 
 ```ruby
