@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.version       = SimpleCov::Formatter::MaterialFormatter::VERSION
   spec.authors       = ["Christopher Pezza"]
   spec.email         = ["chiefpansancolt@gmail.com"]
-
   spec.summary       = "HTML Material Design View for Simplecov formatter"
   spec.description   = %q(HTML Material Design View of Simplecov as a formatter
                           that is clean, easy to read.)
@@ -18,16 +17,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.3.0"
 
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "https://rubygems.pkg.github.com/chiefpansancolt'"
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/chiefpansancolt/simplecov-material"
-    spec.metadata["changelog_uri"] = "https://github.com/chiefpansancolt/simplecov-material/blob/master/CHANGELOG.md"
-    spec.metadata["bug_tracker_uri"] = "https://github.com/chiefpansancolt/simplecov-material/issues"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = "https://github.com/chiefpansancolt/simplecov-material"
+  spec.metadata["changelog_uri"] = "https://github.com/chiefpansancolt/simplecov-material/blob/master/CHANGELOG.md"
+  spec.metadata["bug_tracker_uri"] = "https://github.com/chiefpansancolt/simplecov-material/issues"
 
   spec.files         = `git ls-files`.split("\n")
   spec.bindir        = "bin"
