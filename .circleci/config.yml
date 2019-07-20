@@ -114,26 +114,6 @@ build_steps:
     store_test_results:
       path: test/reports
 
-  - &register_ruby_gems
-    run:
-      name: Setup Rubygems
-      command: bash .circleci/setup-rubygems.sh
-
-  - &publish_gem_major
-    run:
-      name: Publish Gem to RubyGems and Github
-      command: ./bin/publish major
-
-  - &publish_gem_minor
-    run:
-      name: Publish Gem to RubyGems and Github
-      command: ./bin/publish minor
-
-  - &publish_gem_patch
-    run:
-      name: Publish Gem to RubyGems and Github
-      command: ./bin/publish patch
-
 jobs:
   build:
     <<: *node_version
@@ -192,33 +172,9 @@ jobs:
       - *store_coverage
       - *store_test_results
 
-  publish_major:
-    <<: *ruby-2-6
-    steps:
-      - checkout
-      - *bundle_install
-      - *register_ruby_gems
-      - *publish_gem_major
-
-  publish_minor:
-    <<: *ruby-2-6
-    steps:
-      - checkout
-      - *bundle_install
-      - *register_ruby_gems
-      - *publish_gem_minor
-
-  publish_patch:
-    <<: *ruby-2-6
-    steps:
-      - checkout
-      - *bundle_install
-      - *register_ruby_gems
-      - *publish_gem_patch
-
 workflows:
   version: 2
-  build-test-publish:
+  build-test:
     jobs:
       - build
       - test-ruby-2-6:
@@ -239,48 +195,3 @@ workflows:
             - test-ruby-2-5
             - test-ruby-2-4
             - test-ruby-2-3
-      - major:
-          type: approval
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
-      - minor:
-          type: approval
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
-      - patch:
-          type: approval
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
-      - publish_major:
-          requires:
-            - major
-          filters:
-            branches:
-              only:
-                - master
-      - publish_minor:
-          requires:
-            - minor
-          filters:
-            branches:
-              only:
-                - master
-      - publish_patch:
-          requires:
-            - patch
-          filters:
-            branches:
-              only:
-                - master
