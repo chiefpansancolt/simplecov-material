@@ -7,7 +7,9 @@
 
 > Note: To learn more about SimpleCov, check out the main repo at https://github.com/colszowka/simplecov
 
-Generates a HTML Material Design report generated from Simplecov using ruby 2.2 or greater.
+Generates a HTML Material Design report generated from Simplecov using ruby 2.3 or greater.
+
+> Checkout this article on the approach to development [https://dev.to/chiefpansancolt/using-a-clean-formatter-for-ruby-testing-2khe](https://dev.to/chiefpansancolt/using-a-clean-formatter-for-ruby-testing-2khe)
 
 ## Table of Contents
 
@@ -43,7 +45,7 @@ group :test do
   gem "simplecov"
 end
 
-source "https://rubygems.pkg.github.com/chiefpansancolt" 
+source "https://rubygems.pkg.github.com/chiefpansancolt"
   group :test do
     gem "simplecov-material"
   end
