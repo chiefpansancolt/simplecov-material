@@ -114,6 +114,16 @@ build_steps:
     store_test_results:
       path: test/reports
 
+  - &register_ruby_gems
+    run:
+      name: Setup Rubygems
+      command: bash .circleci/setup-rubygems.sh
+
+  - &publish_gem
+    run:
+      name: Publish Gem to RubyGems and Github
+      command: ./bin/publish
+
 jobs:
   build:
     <<: *node_version
@@ -172,9 +182,17 @@ jobs:
       - *store_coverage
       - *store_test_results
 
+  publish:
+    <<: *ruby-2-6
+    steps:
+      - checkout
+      - *bundle_install
+      - *register_ruby_gems
+      - *publish_gem
+
 workflows:
   version: 2
-  build-test:
+  build-test-publish:
     jobs:
       - build
       - test-ruby-2-6:
@@ -195,3 +213,18 @@ workflows:
             - test-ruby-2-5
             - test-ruby-2-4
             - test-ruby-2-3
+      - hold:
+          type: approval
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
+      - publish:
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - master
