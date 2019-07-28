@@ -6,9 +6,11 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gemspec
 
+gem "json"
 gem "minitest"
 gem "minitest-ci"
 gem "mocha"
+gem "pry"
 gem "rake"
 
 group :development do

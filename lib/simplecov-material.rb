@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 require "erb"
-require "cgi"
 require "fileutils"
-require "digest/sha1"
 
 # Ensure we are using a compatible version of SimpleCov
 major, minor, patch = SimpleCov::VERSION.scan(/\d+/).first(3).map(&:to_i)

@@ -14,7 +14,7 @@ class SimplecovMaterialTest < Minitest::Test
   def test_version
     version = SimpleCov::Formatter::MaterialFormatter::VERSION
 
-    assert(version == "0.1.0")
+    assert(!version.nil?)
   end
 
   def test_execution # rubocop:disable MethodLength

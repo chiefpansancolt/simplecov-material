@@ -8,7 +8,9 @@
 
 > Note: To learn more about SimpleCov, check out the main repo at https://github.com/colszowka/simplecov
 
-Generates a HTML Material Design report generated from Simplecov using ruby 2.2 or greater.
+Generates a HTML Material Design report generated from Simplecov using ruby 2.3 or greater.
+
+> Checkout this article on the approach to development [https://dev.to/chiefpansancolt/using-a-clean-formatter-for-ruby-testing-2khe](https://dev.to/chiefpansancolt/using-a-clean-formatter-for-ruby-testing-2khe)
 
 ## Table of Contents
 
@@ -24,6 +26,8 @@ Generates a HTML Material Design report generated from Simplecov using ruby 2.2 
 
 Add the below to your Gemfile to make Simplecov Material available as a formatter for your application
 
+### Ruby Gems Host
+
 ```ruby
 # ./Gemfile
 
@@ -33,11 +37,33 @@ group :test do
 end
 ```
 
+### Github Rubygems Host
+
+```ruby
+# ./Gemfile
+
+group :test do
+  gem "simplecov"
+end
+
+source "https://rubygems.pkg.github.com/chiefpansancolt"
+  group :test do
+    gem "simplecov-material"
+  end
+end
+```
+
 ## Usage
 
 To use Simplecov Material you will need to ensure your Formatter is set to use Simplecov Material.
 
 In your helper ensure your line about formatter usage is one of the following.
+
+Ensure to add the require tag at the top of your helper class where Simplecov is configured
+
+```ruby
+require "simplecov-material"
+```
 
 **Single Formatter Usage:**
 
