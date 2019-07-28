@@ -1,8 +1,10 @@
 # Simplecov Material
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/0eb25c5bffe23ccf5796/maintainability)](https://codeclimate.com/github/chiefpansancolt/simplecov-material/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0eb25c5bffe23ccf5796/test_coverage)](https://codeclimate.com/github/chiefpansancolt/simplecov-material/test_coverage)
-[![CircleCI](https://circleci.com/gh/chiefpansancolt/simplecov-material.svg?style=svg)](https://circleci.com/gh/chiefpansancolt/simplecov-material)
+![CircleCI](https://img.shields.io/circleci/build/gh/chiefpansancolt/simplecov-material/master?logo=circleci&style=flat-square)
+![Code Climate coverage](https://img.shields.io/codeclimate/coverage/chiefpansancolt/simplecov-material?logo=code%20climate&style=flat-square)
+![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/chiefpansancolt/simplecov-material?logo=code%20climate&style=flat-square)
+![GitHub release](https://img.shields.io/github/release/chiefpansancolt/simplecov-material?logo=github&style=flat-square)
+![Gem](https://img.shields.io/gem/dt/simplecov-material?logo=rubygems&style=flat-square)
 
 > Note: To learn more about SimpleCov, check out the main repo at https://github.com/colszowka/simplecov
 
