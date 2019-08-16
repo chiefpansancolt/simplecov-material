@@ -5,6 +5,7 @@
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/chiefpansancolt/simplecov-material?logo=code%20climate&style=flat-square)
 ![GitHub release](https://img.shields.io/github/release/chiefpansancolt/simplecov-material?logo=github&style=flat-square)
 ![Gem](https://img.shields.io/gem/dt/simplecov-material?logo=rubygems&style=flat-square)
+[![Discord](https://img.shields.io/discord/450095227185659905?label=Discord&logo=discord&style=flat-square)](https://discord.gg/FPfA3w6)
 
 > Note: To learn more about SimpleCov, check out the main repo at https://github.com/colszowka/simplecov
 
