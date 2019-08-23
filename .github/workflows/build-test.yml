@@ -1,15 +1,34 @@
-name: Test
+name: Build under Versions
 
 on: [push]
 
 jobs:
-  Build:
+  Ubuntu:
     runs-on: ${{ matrix.os }}
  
     strategy:
       matrix:
         ruby_version: [2.6.x, 2.5.x, 2.4.x, 2.3.x]
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Ruby Versions
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby_version }}
+    - name: Build and test with Rake
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        bundle exec rake
+  Mac:
+    runs-on: ${{ matrix.os }}
+ 
+    strategy:
+      matrix:
+        ruby_version: [2.6.x, 2.5.x, 2.4.x, 2.3.x]
+        os: [macOS-latest]
 
     steps:
     - uses: actions/checkout@v1
