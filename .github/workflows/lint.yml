@@ -6,15 +6,44 @@ jobs:
   Rubocop:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby Versions
+    - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build and test with Rake
+    - name: Set up Node
+      uses: nuxt/actions-yarn@node-11
+    - name: Install and Run Rubocop
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rubocop
+        yarn install
+        yarn lint:ruby
+
+  ESLint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Node
+      uses: nuxt/actions-yarn@node-11
+    - name: Install and Run ESLint
+      run: |
+        yarn install
+        yarn lint:js
+
+  StyleLint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Node
+      uses: nuxt/actions-yarn@node-11
+    - name: Install and Run Stylelint
+      run: |
+        yarn install
+        yarn lint:css
