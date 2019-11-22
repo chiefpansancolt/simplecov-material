@@ -8,7 +8,6 @@ gemspec
 
 gem "json"
 gem "minitest"
-gem "minitest-ci"
 gem "mocha"
 gem "pry"
 gem "rake"
