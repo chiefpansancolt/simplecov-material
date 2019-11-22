@@ -17,7 +17,7 @@ class SimplecovMaterialTest < Minitest::Test
     assert(!version.nil?)
   end
 
-  def test_execution # rubocop:disable MethodLength
+  def test_execution # rubocop:disable Metrics/MethodLength
     @original_result = {
       source_fixture("sample.rb") => [nil, 1, 1, 1, nil, nil, 1, 1, nil, nil],
       source_fixture("app/models/user.rb") => [

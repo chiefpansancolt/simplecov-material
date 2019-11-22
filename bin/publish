@@ -39,7 +39,7 @@ end
 
 joined_version = current_version.join(".")
 
-FileUtils.chdir APP_ROOT do # rubocop:disable BlockLength
+FileUtils.chdir APP_ROOT do # rubocop:disable Metrics/BlockLength
   contents = <<~FILE
     # frozen_string_literal: true
 
