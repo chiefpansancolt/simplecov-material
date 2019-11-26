@@ -1,8 +1,8 @@
 # Simplecov Material
 
-[![Ruby Build](https://github.com/chiefpansancolt/simplecov-material/workflows/ruby-build/badge.svg)]()
-[![Node Build](https://github.com/chiefpansancolt/simplecov-material/workflows/node-build/badge.svg)]()
-[![Test](https://github.com/chiefpansancolt/simplecov-material/workflows/ruby-test/badge.svg)]()
+[![Builds](https://github.com/chiefpansancolt/simplecov-material/workflows/Builds/badge.svg)]()
+[![Lints](https://github.com/chiefpansancolt/simplecov-material/workflows/Linter/badge.svg)]()
+[![Tests](https://github.com/chiefpansancolt/simplecov-material/workflows/Tests/badge.svg)]()
 ![GitHub release](https://img.shields.io/github/release/chiefpansancolt/simplecov-material?logo=github&style=flat-square)
 ![Gem](https://img.shields.io/gem/dt/simplecov-material?logo=rubygems&style=flat-square)
 [![Discord](https://img.shields.io/discord/450095227185659905?label=Discord&logo=discord&style=flat-square)](https://discord.gg/FPfA3w6)
