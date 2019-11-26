@@ -52,54 +52,91 @@
     </div>
   </div>
 
-  <div class="mdc-card mdc-card--outlined">
-    <div class="mdc-text-field mdc-text-field--with-trailing-icon">
+  <div class="text-field-container search-box-outline">
+    <div class="mdc-text-field text-field mdc-text-field-outlined-shaped mdc-text-field--outlined mdc-text-field--with-leading-icon">
       <i class="material-icons mdc-text-field__icon">search</i>
       <input type="search" class="mdc-text-field__input search-box" onkeyup="searchTable(this.id)" onsearch="searchTable(this.id)" id="<%= title_id %>">
-      <div class="mdc-line-ripple"></div>
-      <label for="text-field-hero-input" class="mdc-floating-label">Search</label>
+      <div class="mdc-notched-outline">
+        <div class="mdc-notched-outline__leading"></div>
+        <div class="mdc-notched-outline__notch">
+          <label for="tf-outlined" class="mdc-floating-label">Search</label>
+        </div>
+        <div class="mdc-notched-outline__trailing"></div>
+      </div>
     </div>
-    <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent" aria-hidden="false">
-      You can search based on File column.
+    <div class="mdc-text-field-helper-line">
+      <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg">You can search based on File column.</div>
     </div>
+  </div>
 
-    <table class="table table-hover table-condensed" id="<%= title_id %>-table">
+  <br/>
+
+  <div class="mdc-data-table">
+    <table class="mdc-data-table__table" id="<%= title_id %>-table">
         <thead>
-          <tr>
-            <th class="width-50">File</th>
-            <th class="width-9 center">% Covered</th>
-            <th class="width-5 center">Lines</th>
-            <th class="width-9 center">Relevant Lines</th>
-            <th class="width-9 center">Lines Covered</th>
-            <th class="width-9 center">Lines Missed</th>
-            <th class="width-9 center">Avg Hits/Line</th>
+          <tr class="mdc-data-table__header-row">
+            <th class="mdc-data-table__header-cell width-50" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              File
+            </th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              % Covered
+            </th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-5" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              Lines
+            </th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              Relevant Lines
+            </th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              Lines Covered
+            </th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              Lines Missed
+            </th>
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+              <i class="material-icons hide">arrow_upward</i>
+              <i class="material-icons hide">arrow_downward</i>
+              Avg Hits/Line
+            </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="mdc-data-table__content">
           <% files.each do |source_file| %>
-            <tr class="clickable" name="<%= shortened_filename(source_file) %>"
+            <tr class="mdc-data-table__row clickable" name="<%= shortened_filename(source_file) %>"
                 onclick="openModal(this.attributes.name.value)">
               <td class="width-50" title="<%= shortened_filename(source_file) %>">
                 <div class="overflow">
                   <%= shortened_filename(source_file) %>
                 </div>
               </td>
-              <td class="width-9 <%= coverage_class(source_file.covered_percent) %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9 <%= coverage_class(source_file.covered_percent) %>">
                 <%= source_file.covered_percent.round(2).to_s %>%
               </td>
-              <td class="width-5 center">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-5">
                 <%= format_number(source_file.lines.count) %>
               </td>
-              <td class="width-9 center">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
                 <%= format_number(source_file.covered_lines.count + source_file.missed_lines.count) %>
               </td>
-              <td class="width-9 center">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
                 <%= format_number(source_file.covered_lines.count) %>
               </td>
-              <td class="width-9 center">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
                 <%= format_number(source_file.missed_lines.count) %>
               </td>
-              <td class="width-9 center">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
                 <%= format_number(source_file.covered_strength) %>
               </td>
             </tr>
