@@ -1,8 +1,8 @@
 # Simplecov Material
 
-![CircleCI](https://img.shields.io/circleci/build/gh/chiefpansancolt/simplecov-material/master?logo=circleci&style=flat-square)
-![Code Climate coverage](https://img.shields.io/codeclimate/coverage/chiefpansancolt/simplecov-material?logo=code%20climate&style=flat-square)
-![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/chiefpansancolt/simplecov-material?logo=code%20climate&style=flat-square)
+[![Ruby Build](https://github.com/chiefpansancolt/simplecov-material/workflows/ruby-build/badge.svg)]()
+[![Node Build](https://github.com/chiefpansancolt/simplecov-material/workflows/node-build/badge.svg)]()
+[![Test](https://github.com/chiefpansancolt/simplecov-material/workflows/ruby-test/badge.svg)]()
 ![GitHub release](https://img.shields.io/github/release/chiefpansancolt/simplecov-material?logo=github&style=flat-square)
 ![Gem](https://img.shields.io/gem/dt/simplecov-material?logo=rubygems&style=flat-square)
 [![Discord](https://img.shields.io/discord/450095227185659905?label=Discord&logo=discord&style=flat-square)](https://discord.gg/FPfA3w6)
