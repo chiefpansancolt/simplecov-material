@@ -1,7 +1,4 @@
-.table {
-  background: {
-    color: #FFF;
-  }
+table {
   border: {
     spacing: 0;
   }
@@ -18,9 +15,10 @@
   tbody {
 
     tr {
-      -webkit-transition: all .3s ease;
-      -o-transition: all .3s ease;
-      transition: all .3s ease;
+
+      th {
+        cursor: pointer;
+      }
 
       th,
       td {
@@ -29,12 +27,6 @@
         }
 
         padding: 1.6rem;
-        -webkit-transition: all .3s ease;
-        -o-transition: all .3s ease;
-        transition: all .3s ease;
-        text: {
-          align: left;
-        }
         vertical: {
           align: top;
         }
@@ -61,76 +53,25 @@
             space: nowrap;
           }
         }
-      }
-    }
-  }
 
-  thead {
+        i {
 
-    tr {
-
-      th {
-        border: {
-          bottom: 1px solid rgba(0, 0, 0, .12);
-        }
-
-        color: #757575;
-        font: {
-          weight: 400;
-        }
-        vertical: {
-          align: bottom;
-        }
-      }
-    }
-  }
-
-  tbody {
-    border: {
-      top: 1px solid rgba(0, 0, 0, .12);
-    }
-  }
-
-  &.table-condensed {
-
-    thead,
-    tbody {
-
-      tr {
-
-        th,
-        td {
-          padding: .8rem;
-        }
-      }
-    }
-  }
-
-  &.table-hover {
-
-    tbody {
-
-      tr:hover {
-
-        td {
-          background: {
-            color: rgba(0, 0, 0, .12);
+          vertical: {
+            align: inherit;
           }
         }
       }
     }
   }
+}
 
-  thead:first-child {
+table thead tr th,
+table thead tr td,
+table tbody tr th,
+table tbody tr td {
+  padding: 1rem;
+}
 
-    tr:first-child {
-
-      th,
-      td {
-        border: {
-          top: 0;
-        }
-      }
-    }
-  }
+.hide {
+  display: none;
 }
