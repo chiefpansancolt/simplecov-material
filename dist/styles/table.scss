@@ -1,3 +1,7 @@
+.mdc-data-table {
+  width: 100%;
+}
+
 table {
   border: {
     spacing: 0;
@@ -5,9 +9,9 @@ table {
   max: {
     width: 100%;
   }
-  table: {
-    layout: fixed;
-  }
+  // table: {
+    // layout: fixed;
+  // }
 
   width: 100%;
 

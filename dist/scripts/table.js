@@ -29,7 +29,7 @@ function sortTable(table, col, reverse) {
   var c;
   reverse = -((+reverse) || -1);
   tr = tr.sort(function(a, b) {
-    return reverse * (a.cells[col].textContent.trim().localeCompare(b.cells[col].textContent.trim()));
+    return reverse * (a.cells[col].textContent.trim().localeCompare(b.cells[col].textContent.trim(), undefined, {numeric: true}));
   });
   for (i = 0; i < th.length; ++i) {
     for (c = 0; c < th[i].cells.length; ++c) {
