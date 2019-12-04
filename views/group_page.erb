@@ -116,27 +116,27 @@
           <% files.each do |source_file| %>
             <tr class="mdc-data-table__row clickable" name="<%= shortened_filename(source_file) %>"
                 onclick="openModal(this.attributes.name.value)">
-              <td class="width-50" title="<%= shortened_filename(source_file) %>">
+              <td class="width-50" title="<%= shortened_filename(source_file) %>" data-sort-val="<%= shortened_filename(source_file) %>">
                 <div class="overflow">
                   <%= shortened_filename(source_file) %>
                 </div>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9 <%= coverage_class(source_file.covered_percent) %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9 <%= coverage_class(source_file.covered_percent) %>" data-sort-val="<%= source_file.covered_percent.round(2).to_s %>">
                 <%= source_file.covered_percent.round(2).to_s %>%
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-5">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-5" data-sort-val="<%= source_file.lines.count %>">
                 <%= format_number(source_file.lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.covered_lines.count + source_file.missed_lines.count %>">
                 <%= format_number(source_file.covered_lines.count + source_file.missed_lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.covered_lines.count %>">
                 <%= format_number(source_file.covered_lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.missed_lines.count %>">
                 <%= format_number(source_file.missed_lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.covered_strength %>">
                 <%= format_number(source_file.covered_strength) %>
               </td>
             </tr>
