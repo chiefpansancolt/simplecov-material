@@ -835,10 +835,10 @@ Style/UnlessElse:
   Description: Do not use unless with else. Rewrite these with the positive case first.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-else-with-unless
   Enabled: true
-Style/RedundantCapitalW:
+Style/UnneededCapitalW:
   Description: Checks for %W when interpolation is not needed.
   Enabled: false
-Style/RedundantPercentQ:
+Style/UnneededPercentQ:
   Description: Checks for %q/%Q when single quotes or double quotes would do.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-q
   Enabled: false

@@ -75,37 +75,37 @@
     <table class="mdc-data-table__table" id="<%= title_id %>-table">
         <thead>
           <tr class="mdc-data-table__header-row">
-            <th class="mdc-data-table__header-cell width-50" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell width-32" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               File
             </th>
-            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-12" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               % Covered
             </th>
-            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-5" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-8" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               Lines
             </th>
-            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-12" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               Relevant Lines
             </th>
-            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-12" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               Lines Covered
             </th>
-            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-12" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               Lines Missed
             </th>
-            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-9" role="columnheader" scope="col">
+            <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric width-12" role="columnheader" scope="col">
               <i class="material-icons hide">arrow_upward</i>
               <i class="material-icons hide">arrow_downward</i>
               Avg Hits/Line
@@ -116,27 +116,27 @@
           <% files.each do |source_file| %>
             <tr class="mdc-data-table__row clickable" name="<%= shortened_filename(source_file) %>"
                 onclick="openModal(this.attributes.name.value)">
-              <td class="width-50" title="<%= shortened_filename(source_file) %>" data-sort-val="<%= shortened_filename(source_file) %>">
+              <td class="width-32" title="<%= shortened_filename(source_file) %>" data-sort-val="<%= shortened_filename(source_file) %>">
                 <div class="overflow">
                   <%= shortened_filename(source_file) %>
                 </div>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9 <%= coverage_class(source_file.covered_percent) %>" data-sort-val="<%= source_file.covered_percent.round(2).to_s %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-12 <%= coverage_class(source_file.covered_percent) %>" data-sort-val="<%= source_file.covered_percent.round(2).to_s %>">
                 <%= source_file.covered_percent.round(2).to_s %>%
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-5" data-sort-val="<%= source_file.lines.count %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-8" data-sort-val="<%= source_file.lines.count %>">
                 <%= format_number(source_file.lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.covered_lines.count + source_file.missed_lines.count %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-12" data-sort-val="<%= source_file.covered_lines.count + source_file.missed_lines.count %>">
                 <%= format_number(source_file.covered_lines.count + source_file.missed_lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.covered_lines.count %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-12" data-sort-val="<%= source_file.covered_lines.count %>">
                 <%= format_number(source_file.covered_lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.missed_lines.count %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-12" data-sort-val="<%= source_file.missed_lines.count %>">
                 <%= format_number(source_file.missed_lines.count) %>
               </td>
-              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-9" data-sort-val="<%= source_file.covered_strength %>">
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric width-12" data-sort-val="<%= source_file.covered_strength %>">
                 <%= format_number(source_file.covered_strength) %>
               </td>
             </tr>
