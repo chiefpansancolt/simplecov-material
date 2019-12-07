@@ -1,7 +1,7 @@
 <div class="tab-groups" name="<%= title_id %>" style="<%= hide_show(title_id) %>">
   <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner">
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet">
         <div class="mdc-card card-tile">
           <p class="card-title">Covered</p>
           <h4 class="card-data mdc-typography--headline4 <%= coverage_class(files.covered_percent) %>">
@@ -9,7 +9,7 @@
           </h4>
         </div>
       </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet">
         <div class="mdc-card card-tile">
           <p class="card-title">Hits/Line</p>
           <h4 class="card-data mdc-typography--headline4 <%= strength_class(files.covered_strength) %>">
@@ -17,7 +17,7 @@
           </h4>
         </div>
       </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet">
         <div class="mdc-card card-tile">
           <p class="card-title"># of Files</p>
           <h4 class="card-data mdc-typography--headline4">
@@ -25,7 +25,7 @@
           </h4>
         </div>
       </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet">
         <div class="mdc-card card-tile">
           <p class="card-title">Relevent Lines</p>
           <h4 class="card-data mdc-typography--headline4">
@@ -33,7 +33,7 @@
           </h4>
         </div>
       </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet">
         <div class="mdc-card card-tile">
           <p class="card-title">Lines Covered</p>
           <h4 class="card-data mdc-typography--headline4 green">
@@ -41,7 +41,7 @@
           </h4>
         </div>
       </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet">
         <div class="mdc-card card-tile">
           <p class="card-title">Lines Missed</p>
           <h4 class="card-data mdc-typography--headline4 red">
