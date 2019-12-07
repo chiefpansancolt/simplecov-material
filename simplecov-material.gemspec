@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Christopher Pezza"]
   spec.email         = ["chiefpansancolt@gmail.com"]
   spec.summary       = "HTML Material Design View for Simplecov formatter"
-  spec.description   = %q(HTML Material Design View of Simplecov as a formatter
-                          that is clean, easy to read.)
+  spec.description   = "HTML Material Design View of Simplecov as a formatter"\
+                       "that is clean, easy to read."
   spec.homepage      = "https://github.com/chiefpansancolt/simplecov-material"
   spec.license       = "MIT"
 

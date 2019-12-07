@@ -2,14 +2,6 @@ table {
   border: {
     spacing: 0;
   }
-  max: {
-    width: 100%;
-  }
-  table: {
-    layout: fixed;
-  }
-
-  width: 100%;
 
   thead,
   tbody {
@@ -31,16 +23,16 @@ table {
           align: top;
         }
 
-        &.width-50 {
-          width: 38%;
+        &.width-32 {
+          width: 32%;
         }
 
-        &.width-5 {
-          width: 7%;
+        &.width-8 {
+          width: 8%;
         }
 
-        &.width-9 {
-          width: 11%;
+        &.width-12 {
+          width: 12%;
         }
 
         .overflow {
@@ -67,4 +59,20 @@ table {
 
 .hide {
   display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+
+  .mdc-data-table {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1149px) {
+
+  table {
+    table: {
+      layout: fixed;
+    }
+  }
 }

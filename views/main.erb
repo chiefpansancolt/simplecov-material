@@ -8,7 +8,7 @@
   </head>
 
   <body class="mdc-typography">
-    <aside class="mdc-drawer">
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
       <div class="mdc-drawer__header">
         <h3 class="mdc-drawer__title">Code Coverage</h3>
         <h6 class="mdc-drawer__subtitle">
@@ -48,6 +48,7 @@
       <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar" id="app-bar">
         <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a href="#" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
             <span class="mdc-top-app-bar__title">
               <%= SimpleCov.project_name.split('-').map(&:capitalize).join(' ') %>
             </span>
