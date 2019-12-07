@@ -3411,7 +3411,7 @@ svg.mdc-button__icon {
   /* @alternate */
   background-color: var(--mdc-theme-secondary, #4FC3F7); }
 
-@-webkit-keyframes mdc-checkbox-fade-in-background-ud575203d {
+@-webkit-keyframes mdc-checkbox-fade-in-background-u875cd176 {
   0% {
     border-color: rgba(0, 0, 0, 0.54);
     background-color: transparent; }
@@ -3423,7 +3423,7 @@ svg.mdc-button__icon {
     /* @alternate */
     background-color: var(--mdc-theme-secondary, #4FC3F7); } }
 
-@keyframes mdc-checkbox-fade-in-background-ud575203d {
+@keyframes mdc-checkbox-fade-in-background-u875cd176 {
   0% {
     border-color: rgba(0, 0, 0, 0.54);
     background-color: transparent; }
@@ -3435,7 +3435,7 @@ svg.mdc-button__icon {
     /* @alternate */
     background-color: var(--mdc-theme-secondary, #4FC3F7); } }
 
-@-webkit-keyframes mdc-checkbox-fade-out-background-ud575203d {
+@-webkit-keyframes mdc-checkbox-fade-out-background-u875cd176 {
   0%,
   80% {
     border-color: #4FC3F7;
@@ -3448,7 +3448,7 @@ svg.mdc-button__icon {
     border-color: rgba(0, 0, 0, 0.54);
     background-color: transparent; } }
 
-@keyframes mdc-checkbox-fade-out-background-ud575203d {
+@keyframes mdc-checkbox-fade-out-background-u875cd176 {
   0%,
   80% {
     border-color: #4FC3F7;
@@ -3462,12 +3462,12 @@ svg.mdc-button__icon {
     background-color: transparent; } }
 
 .mdc-checkbox--anim-unchecked-checked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background, .mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
-  -webkit-animation-name: mdc-checkbox-fade-in-background-ud575203d;
-          animation-name: mdc-checkbox-fade-in-background-ud575203d; }
+  -webkit-animation-name: mdc-checkbox-fade-in-background-u875cd176;
+          animation-name: mdc-checkbox-fade-in-background-u875cd176; }
 
 .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background, .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
-  -webkit-animation-name: mdc-checkbox-fade-out-background-ud575203d;
-          animation-name: mdc-checkbox-fade-out-background-ud575203d; }
+  -webkit-animation-name: mdc-checkbox-fade-out-background-u875cd176;
+          animation-name: mdc-checkbox-fade-out-background-u875cd176; }
 
 .mdc-checkbox__checkmark {
   color: #FFF; }
@@ -4254,7 +4254,7 @@ svg.mdc-button__icon {
   /* @alternate */
   background-color: var(--mdc-theme-primary, #1A237E); }
 
-@-webkit-keyframes mdc-checkbox-fade-in-background-u39295ac8 {
+@-webkit-keyframes mdc-checkbox-fade-in-background-u23786fa6 {
   0% {
     border-color: rgba(0, 0, 0, 0.54);
     background-color: transparent; }
@@ -4266,7 +4266,7 @@ svg.mdc-button__icon {
     /* @alternate */
     background-color: var(--mdc-theme-primary, #1A237E); } }
 
-@keyframes mdc-checkbox-fade-in-background-u39295ac8 {
+@keyframes mdc-checkbox-fade-in-background-u23786fa6 {
   0% {
     border-color: rgba(0, 0, 0, 0.54);
     background-color: transparent; }
@@ -4278,7 +4278,7 @@ svg.mdc-button__icon {
     /* @alternate */
     background-color: var(--mdc-theme-primary, #1A237E); } }
 
-@-webkit-keyframes mdc-checkbox-fade-out-background-u39295ac8 {
+@-webkit-keyframes mdc-checkbox-fade-out-background-u23786fa6 {
   0%,
   80% {
     border-color: #1A237E;
@@ -4291,7 +4291,7 @@ svg.mdc-button__icon {
     border-color: rgba(0, 0, 0, 0.54);
     background-color: transparent; } }
 
-@keyframes mdc-checkbox-fade-out-background-u39295ac8 {
+@keyframes mdc-checkbox-fade-out-background-u23786fa6 {
   0%,
   80% {
     border-color: #1A237E;
@@ -4307,14 +4307,14 @@ svg.mdc-button__icon {
 .mdc-data-table__header-row-checkbox.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background, .mdc-data-table__header-row-checkbox.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background,
 .mdc-data-table__row-checkbox.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background,
 .mdc-data-table__row-checkbox.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
-  -webkit-animation-name: mdc-checkbox-fade-in-background-u39295ac8;
-          animation-name: mdc-checkbox-fade-in-background-u39295ac8; }
+  -webkit-animation-name: mdc-checkbox-fade-in-background-u23786fa6;
+          animation-name: mdc-checkbox-fade-in-background-u23786fa6; }
 
 .mdc-data-table__header-row-checkbox.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background, .mdc-data-table__header-row-checkbox.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background,
 .mdc-data-table__row-checkbox.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background,
 .mdc-data-table__row-checkbox.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
-  -webkit-animation-name: mdc-checkbox-fade-out-background-u39295ac8;
-          animation-name: mdc-checkbox-fade-out-background-u39295ac8; }
+  -webkit-animation-name: mdc-checkbox-fade-out-background-u23786fa6;
+          animation-name: mdc-checkbox-fade-out-background-u23786fa6; }
 
 .mdc-dialog,
 .mdc-dialog__scrim {
@@ -11257,10 +11257,7 @@ section.footer {
   padding-right: 32px; }
 
 table {
-  border-spacing: 0;
-  max-width: 100%;
-  table-layout: fixed;
-  width: 100%; }
+  border-spacing: 0; }
   table thead tr th,
   table tbody tr th {
     cursor: pointer; }
@@ -11271,21 +11268,21 @@ table {
     border-top: 0;
     padding: 1rem;
     vertical-align: top; }
-    table thead tr th.width-50,
-    table thead tr td.width-50,
-    table tbody tr th.width-50,
-    table tbody tr td.width-50 {
-      width: 50%; }
-    table thead tr th.width-5,
-    table thead tr td.width-5,
-    table tbody tr th.width-5,
-    table tbody tr td.width-5 {
-      width: 5%; }
-    table thead tr th.width-9,
-    table thead tr td.width-9,
-    table tbody tr th.width-9,
-    table tbody tr td.width-9 {
-      width: 9%; }
+    table thead tr th.width-32,
+    table thead tr td.width-32,
+    table tbody tr th.width-32,
+    table tbody tr td.width-32 {
+      width: 32%; }
+    table thead tr th.width-8,
+    table thead tr td.width-8,
+    table tbody tr th.width-8,
+    table tbody tr td.width-8 {
+      width: 8%; }
+    table thead tr th.width-12,
+    table thead tr td.width-12,
+    table tbody tr th.width-12,
+    table tbody tr td.width-12 {
+      width: 12%; }
     table thead tr th .overflow,
     table thead tr td .overflow,
     table tbody tr th .overflow,
@@ -11302,6 +11299,14 @@ table {
 
 .hide {
   display: none; }
+
+@media only screen and (max-width: 1150px) {
+  .mdc-data-table {
+    width: 100%; } }
+
+@media only screen and (min-width: 1149px) {
+  table {
+    table-layout: fixed; } }
 
 .mdc-dialog--scrollable .mdc-dialog__content {
   padding: 0; }
