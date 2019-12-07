@@ -1,5 +1,5 @@
 import {MDCTopAppBar} from '@material/top-app-bar';
-import {MDCDrawer} from "@material/drawer";
+import {MDCDrawer} from '@material/drawer';
 
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
