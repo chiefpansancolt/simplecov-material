@@ -25,7 +25,7 @@ module SimpleCov
       end
 
       def output_message(result)
-        "Coverage report generated for #{result.command_name} to" \
+        "Coverage report generated for #{result.command_name} to " \
         "#{output_path}. #{result.covered_lines} / #{result.total_lines} LOC" \
         " (#{result.covered_percent.round(2)}%) covered."
       end
