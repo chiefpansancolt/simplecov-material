@@ -21,10 +21,10 @@
             <i class="material-icons mdc-list-item__graphic" aria-hidden="true">view_list</i>
             <span class="mdc-list-item__text">
               All Files
-              <span class="parenthese">
-                <span class="<%= coverage_class(result.source_files.covered_percent) %>">
+              <span class="">
+                (<span class="<%= coverage_class(result.source_files.covered_percent) %>">
                   <%= result.source_files.covered_percent.round(2) %>%
-                </span>
+                </span>)
               </span>
             </span>
           </a>

@@ -1,3 +1,11 @@
+.mdc-data-table {
+  overflow: {
+    x: scroll;
+  }
+
+  width: 100%;
+}
+
 table {
   border: {
     spacing: 0;
@@ -23,16 +31,30 @@ table {
           align: top;
         }
 
-        &.width-32 {
-          width: 32%;
+        &.text-center {
+          text: {
+            align: center;
+          }
         }
 
-        &.width-8 {
-          width: 8%;
+        &.width-320 {
+          width: 318px;
         }
 
-        &.width-12 {
-          width: 12%;
+        &.width-75 {
+          width: 90px;
+        }
+
+        &.width-60 {
+          width: 75px;
+        }
+
+        &.width-70 {
+          width: 85px;
+        }
+
+        &.width-95 {
+          width: 110px;
         }
 
         .overflow {
