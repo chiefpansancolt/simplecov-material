@@ -37,13 +37,3 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           stylelint_input: 'dist/**/*.scss'
-  
-  markdown-lint:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: stylelint
-      uses: prologic/action-markdownlint@v0.1
-      with:
-        reporter: github-check
