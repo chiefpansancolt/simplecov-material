@@ -25,7 +25,6 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           eslint_flags: 'dist/**/* webpack.config.js'
-          fail_on_error: true
 
   css-lint:
     runs-on: ubuntu-latest
