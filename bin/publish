@@ -7,11 +7,11 @@ require "json"
 
 # path to your application root.
 APP_ROOT = Pathname.new File.expand_path("..", __dir__)
-MASTER_CHECK = <<~MASTER_CHECK
-  if [ $(git symbolic-ref --short -q HEAD) != 'master' ];
+MAIN_CHECK = <<~MAIN_CHECK
+  if [ $(git symbolic-ref --short -q HEAD) != 'main' ];
     then exit 1;
   fi
-MASTER_CHECK
+MAIN_CHECK
 VERSION_TYPES = %w(major minor patch).freeze
 
 def system!(*args)
@@ -20,7 +20,7 @@ end
 
 abort("\n== Version Type incorrect ==") unless VERSION_TYPES.include?(ARGV[0])
 
-abort("\n== Not on master") unless system(MASTER_CHECK)
+abort("\n== Not on main") unless system(MAIN_CHECK)
 
 current_version =
   JSON.parse(File.read("package.json"))["version"].split(".").map(&:to_i)
