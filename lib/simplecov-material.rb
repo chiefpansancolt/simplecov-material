@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require "erb"
+require "cgi"
 require "fileutils"
+require "digest/sha1"
 
 # Ensure we are using a compatible version of SimpleCov
 major, minor, patch = SimpleCov::VERSION.scan(/\d+/).first(3).map(&:to_i)
@@ -12,8 +14,12 @@ end
 
 module SimpleCov
   module Formatter
-    class MaterialFormatter
-      def format(result)
+    class MaterialFormatter # rubocop:disable Metrics/ClassLength
+      def initialize
+        @branchable_result = SimpleCov.branch_coverage?
+      end
+
+      def format(result) # rubocop:disable Metrics/AbcSize
         Dir[File.join(File.dirname(__FILE__), "../public/*")].each do |path|
           FileUtils.cp_r(path, asset_output_path)
         end
@@ -28,6 +34,21 @@ module SimpleCov
         "Coverage report generated for #{result.command_name} to " \
         "#{output_path}. #{result.covered_lines} / #{result.total_lines} LOC" \
         " (#{result.covered_percent.round(2)}%) covered."
+      end
+
+      def branchable_result?
+        # cached in initialize because we truly look it up a whole bunch of times
+        # and it's easier to cache here then in SimpleCov because there we might
+        # still enable/disable branch coverage criterion
+        @branchable_result
+      end
+
+      def line_status?(source_file, line)
+        if branchable_result? && source_file.line_with_missed_branch?(line.number)
+          "missed-branch"
+        else
+          line.status
+        end
       end
 
     private
@@ -66,7 +87,8 @@ module SimpleCov
              "can't handle non ASCII characters in filenames. Error: " \
              "#{e.message}."
       end
-
+      
+      # rubocop:disable Lint/SelfAssignment, Style/RedundantRegexpEscape
       def generate_group_page(title, files)
         title_id = title.gsub(/^[^a-zA-Z]+/, "").gsub(/[^a-zA-Z0-9\-\_]/, "")
         title_id = title_id
@@ -76,6 +98,7 @@ module SimpleCov
       def remove_spaces(name)
         name.gsub(/^[^a-zA-Z]+/, "").gsub(/[^a-zA-Z0-9\-\_]/, "")
       end
+      # rubocop:enable Lint/SelfAssignment, Style/RedundantRegexpEscape
 
       def format_number(number)
         whole, decimal = number.to_s.split(".")
@@ -102,6 +125,10 @@ module SimpleCov
         else
           "red"
         end
+      end
+
+      def id(source_file)
+        Digest::SHA1.hexdigest(source_file.filename)
       end
 
       def shortened_filename(file)
