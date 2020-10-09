@@ -3,6 +3,7 @@ require:
   - rubocop-performance
 
 AllCops:
+  NewCops: enable
   RubyInterpreters:
     - ruby
     - rake
@@ -130,9 +131,6 @@ Lint/EmptyInterpolation:
 Layout/EndAlignment:
   Description: Align ends correctly.
   Enabled: true
-Lint/EndInMethod:
-  Description: END blocks should not be placed inside method definitions.
-  Enabled: true
 Lint/EnsureReturn:
   Description: Do not use return in an ensure block.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-return-ensure
@@ -198,9 +196,6 @@ Lint/UselessAccessModifier:
 Lint/UselessAssignment:
   Description: Checks for useless assignment to a local variable.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars
-  Enabled: true
-Lint/UselessComparison:
-  Description: Checks for comparison of something with itself.
   Enabled: true
 Lint/UselessElseWithoutRescue:
   Description: Checks for useless `else` in `begin..end` without `rescue`.
@@ -354,9 +349,6 @@ Style/BlockDelimiters:
     ugly). Prefer {...} over do...end for single-line blocks.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#single-line-blocks
   Enabled: true
-Style/BracesAroundHashParameters:
-  Description: Enforce braces style around hash parameters.
-  Enabled: false
 Style/CaseEquality:
   Description: Avoid explicit use of the case equality operator(===).
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-case-equality
@@ -811,7 +803,7 @@ Style/SymbolLiteral:
 Style/SymbolProc:
   Description: Use symbols as procs instead of blocks when possible.
   Enabled: false
-Layout/Tab:
+Layout/IndentationStyle:
   Description: No hard tabs.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-indentation
   Enabled: false
