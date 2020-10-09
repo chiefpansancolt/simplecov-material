@@ -73,7 +73,7 @@ AllCops:
   MaxFilesInCache: 20000
   CacheRootDirectory: ~
   AllowSymlinksInCacheRootDirectory: false
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
 
 Style/MixinUsage:
   Enabled: false
