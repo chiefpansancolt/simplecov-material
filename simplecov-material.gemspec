@@ -22,10 +22,16 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "https://github.com/chiefpansancolt/simplecov-material/blob/master/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "https://github.com/chiefpansancolt/simplecov-material/issues"
 
-  spec.files         = `git ls-files`.split("\n")
-  spec.bindir        = "bin"
-  spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  spec.files = Dir[
+    "dist/**/*",
+    "lib/**/*",
+    "public/**/*",
+    "views/**/*",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ]
+  spec.bindir = "bin"
   spec.require_paths = ["lib"]
 
   spec.add_dependency "simplecov", ">= 0.16.0"
