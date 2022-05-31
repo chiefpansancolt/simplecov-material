@@ -1,5 +1,7 @@
 # Simplecov Material
 
+NOTE: This repo is not maintained anymore -> [Simplecov-Tailwindcss](https://github.com/chiefpansancolt/simplecov-tailwindcss) is the preferd and maintined Simplecov Formatter
+
 ![Builds](https://github.com/chiefpansancolt/simplecov-material/workflows/Builds/badge.svg)
 ![Lints](https://github.com/chiefpansancolt/simplecov-material/workflows/Linter/badge.svg)
 ![Tests](https://github.com/chiefpansancolt/simplecov-material/workflows/Tests/badge.svg)
